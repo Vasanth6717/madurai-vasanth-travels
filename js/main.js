@@ -137,28 +137,106 @@ animElements.forEach(el => {
   observer.observe(el);
 });
 
-/* ---- Infinite Auto-Scroll Sliders ---- */
+/* ============================================================
+   Infinite Auto-Scroll Sliders with Arrow Navigation
+   ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
-  initSlider('tariffTrack', 'tariffViewport');
-  initSlider('pkgTrack', 'pkgViewport');
+  initSlider({
+    trackId:    'tariffTrack',
+    viewportId: 'tariffViewport',
+    prevId:     'tariffPrev',
+    nextId:     'tariffNext',
+    speed:      0.6
+  });
+  initSlider({
+    trackId:    'pkgTrack',
+    viewportId: 'pkgViewport',
+    prevId:     'pkgPrev',
+    nextId:     'pkgNext',
+    speed:      0.5
+  });
 });
 
-function initSlider(trackId, viewportId) {
+function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
   const track    = document.getElementById(trackId);
   const viewport = document.getElementById(viewportId);
+  const prevBtn  = document.getElementById(prevId);
+  const nextBtn  = document.getElementById(nextId);
   if (!track || !viewport) return;
 
-  // Clone all items and append for seamless loop
-  const items = Array.from(track.children);
-  items.forEach(item => {
+  // Clone original items for seamless infinite loop
+  const origItems = Array.from(track.children);
+  origItems.forEach(item => {
     const clone = item.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
     track.appendChild(clone);
   });
 
-  // Pause on hover (mouse + touch)
-  viewport.addEventListener('mouseenter', () => track.classList.add('paused'));
-  viewport.addEventListener('mouseleave', () => track.classList.remove('paused'));
-  viewport.addEventListener('touchstart',  () => track.classList.add('paused'),   { passive: true });
-  viewport.addEventListener('touchend',    () => track.classList.remove('paused'), { passive: true });
+  let pos    = 0;       // current translateX offset (px)
+  let paused = false;   // hover/touch pause flag
+  let jumping = false;  // true while arrow animation runs
+
+  function halfWidth() {
+    return track.scrollWidth / 2;
+  }
+
+  function cardStep() {
+    // width of one card item including gap
+    const firstItem = track.querySelector('.slider-item');
+    return firstItem ? firstItem.offsetWidth + 24 : 290;
+  }
+
+  // RAF loop — auto scrolls when not paused or jumping
+  function tick() {
+    if (!paused && !jumping) {
+      pos += speed;
+      if (pos >= halfWidth()) pos -= halfWidth();
+      track.style.transform = `translateX(-${pos}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Pause on hover
+  viewport.addEventListener('mouseenter', () => { paused = true; });
+  viewport.addEventListener('mouseleave', () => { paused = false; });
+  viewport.addEventListener('touchstart',  () => { paused = true; },  { passive: true });
+  viewport.addEventListener('touchend',    () => { paused = false; }, { passive: true });
+
+  // Smooth arrow jump
+  function jumpBy(delta) {
+    const target = pos + delta;
+    const start  = pos;
+    const dur    = 400; // ms
+    const t0     = performance.now();
+    jumping = true;
+
+    function animate(now) {
+      const elapsed = now - t0;
+      const progress = Math.min(elapsed / dur, 1);
+      // ease-in-out
+      const ease = progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+      pos = start + (target - start) * ease;
+
+      // keep within first half (loop boundary)
+      let p = pos;
+      if (p >= halfWidth()) p -= halfWidth();
+      if (p < 0) p += halfWidth();
+      track.style.transform = `translateX(-${p}px)`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        pos = p;
+        jumping = false;
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => jumpBy(-cardStep()));
+  if (nextBtn) nextBtn.addEventListener('click', () => jumpBy(cardStep()));
 }

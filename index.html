@@ -29,7 +29,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#home">
-      <img src="images/meenaxigo-logo.png" alt="MeenaxiGo Logo" class="navbar-logo" />
+      <img src="images/meenaxigo-logo.png" alt="MeenaxiGo" class="navbar-logo" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@
   <div class="hero-overlay"></div>
   <div class="container hero-content text-center text-white">
     <div class="hero-badge mb-3"><i class="fas fa-star me-1"></i> Travel Smart. Travel Sacred.</div>
-    <h1 class="hero-title">Best Taxi Service in Madurai</h1>
+    <h1 class="hero-title">Your Journey Begins Here</h1>
     <p class="hero-subtitle">24/7 Outstation &nbsp;|&nbsp; Local Tours &nbsp;|&nbsp; Airport Transfers</p>
     <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
       <a href="#booking" class="btn btn-warning btn-lg fw-bold px-4">
@@ -297,8 +297,10 @@
     </div>
 
     <!-- Slider wrapper -->
-    <div class="slider-viewport" id="tariffViewport">
-      <div class="slider-track" id="tariffTrack">
+    <div class="slider-wrapper">
+      <button class="slider-arrow slider-prev" id="tariffPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider-viewport" id="tariffViewport">
+        <div class="slider-track" id="tariffTrack">
 
         <!-- ── Card 1 : Sedan ── -->
         <div class="slider-item">
@@ -427,8 +429,10 @@
           </div>
         </div>
 
-      </div><!-- /slider-track -->
-    </div><!-- /slider-viewport -->
+        </div><!-- /slider-track -->
+      </div><!-- /slider-viewport -->
+      <button class="slider-arrow slider-next" id="tariffNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div><!-- /slider-wrapper -->
 
     <p class="text-center text-muted mt-4 small px-3">
       <i class="fas fa-info-circle me-1"></i>
@@ -447,8 +451,10 @@
     </div>
 
     <!-- Packages Slider -->
-    <div class="slider-viewport" id="pkgViewport">
-      <div class="slider-track" id="pkgTrack">
+    <div class="slider-wrapper">
+      <button class="slider-arrow slider-prev" id="pkgPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider-viewport" id="pkgViewport">
+        <div class="slider-track" id="pkgTrack">
 
         <div class="slider-item pkg-slider-item">
           <div class="pkg-card">
@@ -603,8 +609,10 @@
           </div>
         </div>
 
-      </div><!-- /slider-track -->
-    </div><!-- /slider-viewport -->
+        </div><!-- /slider-track -->
+      </div><!-- /slider-viewport -->
+      <button class="slider-arrow slider-next" id="pkgNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div><!-- /slider-wrapper -->
   </div>
 </section>
 
