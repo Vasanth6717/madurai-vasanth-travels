@@ -172,7 +172,7 @@ if (statsBar) {
 /* ============================================================
    Infinite Auto-Scroll Sliders with Arrow Navigation
    ============================================================ */
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   initSlider({
     trackId:    'tariffTrack',
     viewportId: 'tariffViewport',
@@ -196,20 +196,23 @@ function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
   const nextBtn  = document.getElementById(nextId);
   if (!track || !viewport) return;
 
-  // Clone original items for seamless infinite loop
+  // Clone original items TWICE for a robust seamless infinite loop.
+  // Total content = 3× originals; loop resets when pos >= origWidth (1/3 of total).
   const origItems = Array.from(track.children);
-  origItems.forEach(item => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
+  [1, 2].forEach(() => {
+    origItems.forEach(item => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    });
   });
 
   let pos    = 0;       // current translateX offset (px)
   let paused = false;   // hover/touch pause flag
   let jumping = false;  // true while arrow animation runs
 
-  function halfWidth() {
-    return track.scrollWidth / 2;
+  function origWidth() {
+    return track.scrollWidth / 3;
   }
 
   function cardStep() {
@@ -222,7 +225,7 @@ function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
   function tick() {
     if (!paused && !jumping) {
       pos += speed;
-      if (pos >= halfWidth()) pos -= halfWidth();
+      if (pos >= origWidth()) pos -= origWidth();
       track.style.transform = `translateX(-${pos}px)`;
     }
     requestAnimationFrame(tick);
@@ -255,8 +258,8 @@ function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
 
       // keep within first half (loop boundary)
       let p = pos;
-      if (p >= halfWidth()) p -= halfWidth();
-      if (p < 0) p += halfWidth();
+      if (p >= origWidth()) p -= origWidth();
+      if (p < 0) p += origWidth();
       track.style.transform = `translateX(-${p}px)`;
 
       if (progress < 1) {
