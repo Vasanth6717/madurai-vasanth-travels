@@ -107,16 +107,22 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1600&q=80');
+  background-image: url('../images/hero-bg.png');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: right center;
+  background-color: #0d4a3a;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(26,26,46,0.85) 0%, rgba(26,26,46,0.6) 100%);
+  background: linear-gradient(
+    100deg,
+    rgba(13,74,58,0.95) 0%,
+    rgba(13,74,58,0.85) 45%,
+    rgba(13,74,58,0.55) 70%,
+    rgba(13,74,58,0.15) 100%
+  );
 }
 
 .hero-content {
@@ -127,12 +133,13 @@ body {
 
 .hero-badge {
   display: inline-block;
-  background: var(--yellow);
-  color: #000;
+  background: rgba(247,147,30,0.9);
+  color: #fff;
   font-size: 0.82rem;
   font-weight: 600;
   padding: 5px 16px;
   border-radius: 20px;
+  letter-spacing: 0.5px;
 }
 
 .hero-title {
@@ -322,13 +329,43 @@ body {
 }
 
 /* ============================================================
-   TARIFF SECTION
+   SHARED SLIDER (Tariff + Packages)
    ============================================================ */
-.tariff-section {
-  background: #fff;
+.slider-viewport {
+  overflow: hidden;
+  position: relative;
+  padding: 16px 0 24px;
+  /* fade edges */
+  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
 }
 
-.tariff-card {
+.slider-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: slide-left 40s linear infinite;
+  will-change: transform;
+}
+
+.slider-track.paused { animation-play-state: paused; }
+
+@keyframes slide-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.slider-item {
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TARIFF SECTION
+   ============================================================ */
+.tariff-section { background: #fff; }
+
+.slider-item .tariff-card {
+  width: 270px;
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
@@ -337,7 +374,7 @@ body {
   position: relative;
 }
 
-.tariff-card:hover {
+.slider-item .tariff-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
   border-color: var(--yellow);
@@ -359,6 +396,7 @@ body {
   padding: 4px 36px;
   transform: rotate(45deg);
   transform-origin: center;
+  z-index: 2;
 }
 
 .vehicle-img-wrap {
@@ -408,16 +446,11 @@ body {
 /* ============================================================
    TOUR PACKAGES SECTION
    ============================================================ */
-.packages-section {
-  background: var(--light-bg);
-}
+.packages-section { background: var(--light-bg); }
 
-.pkg-region-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--dark);
-  border-left: 4px solid var(--yellow);
-  padding-left: 12px;
+/* Packages slider — slightly wider cards */
+.pkg-slider-item .pkg-card {
+  width: 280px;
 }
 
 .pkg-card {
@@ -434,18 +467,34 @@ body {
 }
 
 .pkg-img {
-  height: 180px;
+  height: 190px;
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .pkg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%);
+}
+
+.pkg-region-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: var(--yellow);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
 }
 
 .pkg-name {

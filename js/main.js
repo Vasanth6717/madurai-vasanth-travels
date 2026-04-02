@@ -117,7 +117,7 @@ function submitContact(e) {
 
 /* ---- Animate elements on scroll (Intersection Observer) ---- */
 const animElements = document.querySelectorAll(
-  '.service-card, .tariff-card, .pkg-card, .why-card, .feature-item'
+  '.service-card, .why-card, .feature-item'
 );
 
 const observer = new IntersectionObserver((entries) => {
@@ -136,3 +136,29 @@ animElements.forEach(el => {
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
 });
+
+/* ---- Infinite Auto-Scroll Sliders ---- */
+document.addEventListener('DOMContentLoaded', () => {
+  initSlider('tariffTrack', 'tariffViewport');
+  initSlider('pkgTrack', 'pkgViewport');
+});
+
+function initSlider(trackId, viewportId) {
+  const track    = document.getElementById(trackId);
+  const viewport = document.getElementById(viewportId);
+  if (!track || !viewport) return;
+
+  // Clone all items and append for seamless loop
+  const items = Array.from(track.children);
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  // Pause on hover (mouse + touch)
+  viewport.addEventListener('mouseenter', () => track.classList.add('paused'));
+  viewport.addEventListener('mouseleave', () => track.classList.remove('paused'));
+  viewport.addEventListener('touchstart',  () => track.classList.add('paused'),   { passive: true });
+  viewport.addEventListener('touchend',    () => track.classList.remove('paused'), { passive: true });
+}

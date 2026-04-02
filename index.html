@@ -289,261 +289,322 @@
 
 <!-- ======= TARIFF SECTION ======= -->
 <section id="tariff" class="tariff-section py-5">
-  <div class="container">
-    <div class="text-center mb-5">
+  <div class="container-fluid px-0">
+    <div class="text-center mb-5 px-3">
       <div class="section-label">Pricing</div>
       <h2 class="section-title">Vehicle &amp; Tariff</h2>
-      <p class="text-muted">Transparent pricing — no hidden charges</p>
+      <p class="text-muted">Transparent pricing — no hidden charges · Hover to pause</p>
     </div>
-    <div class="row g-4 justify-content-center">
 
-      <div class="col-lg-3 col-md-6">
-        <div class="tariff-card h-100">
-          <div class="vehicle-img-wrap">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Maruti_Suzuki_Dzire_2017.jpg/640px-Maruti_Suzuki_Dzire_2017.jpg"
-                 alt="Sedan" class="img-fluid" />
-          </div>
-          <div class="tariff-body">
-            <h5 class="vehicle-name">Sedan</h5>
-            <p class="vehicle-model text-muted small">Swift Dzire / Toyota Etios</p>
-            <ul class="vehicle-specs list-unstyled">
-              <li><i class="fas fa-users me-2 text-warning"></i>4 Passengers</li>
-              <li><i class="fas fa-suitcase me-2 text-warning"></i>2 Bags</li>
-              <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-            </ul>
-            <div class="tariff-rate">
-              <span class="rate-label">Outstation Rate</span>
-              <span class="rate-value">₹12 / km</span>
+    <!-- Slider wrapper -->
+    <div class="slider-viewport" id="tariffViewport">
+      <div class="slider-track" id="tariffTrack">
+
+        <!-- ── Card 1 : Sedan ── -->
+        <div class="slider-item">
+          <div class="tariff-card">
+            <div class="vehicle-img-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Maruti_Suzuki_Dzire_2017.jpg/640px-Maruti_Suzuki_Dzire_2017.jpg" alt="Sedan" />
             </div>
-            <div class="tariff-rate">
-              <span class="rate-label">Local (8hr/80km)</span>
-              <span class="rate-value">₹1,200</span>
+            <div class="tariff-body">
+              <h5 class="vehicle-name">Sedan</h5>
+              <p class="vehicle-model text-muted small">Swift Dzire / Toyota Etios</p>
+              <ul class="vehicle-specs list-unstyled">
+                <li><i class="fas fa-users me-2 text-warning"></i>4 Passengers</li>
+                <li><i class="fas fa-suitcase me-2 text-warning"></i>2 Bags</li>
+                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
+              </ul>
+              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹12 / km</span></div>
+              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹1,200</span></div>
+              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
             </div>
-            <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
           </div>
         </div>
-      </div>
 
-      <div class="col-lg-3 col-md-6">
-        <div class="tariff-card h-100 popular">
-          <div class="popular-badge">Most Popular</div>
-          <div class="vehicle-img-wrap">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Toyota-Innova-2012.jpg/640px-Toyota-Innova-2012.jpg"
-                 alt="Innova" class="img-fluid" />
-          </div>
-          <div class="tariff-body">
-            <h5 class="vehicle-name">SUV</h5>
-            <p class="vehicle-model text-muted small">Toyota Innova / Maruti Ertiga</p>
-            <ul class="vehicle-specs list-unstyled">
-              <li><i class="fas fa-users me-2 text-warning"></i>6–7 Passengers</li>
-              <li><i class="fas fa-suitcase me-2 text-warning"></i>4 Bags</li>
-              <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-            </ul>
-            <div class="tariff-rate">
-              <span class="rate-label">Outstation Rate</span>
-              <span class="rate-value">₹16 / km</span>
+        <!-- ── Card 2 : Ertiga ── -->
+        <div class="slider-item">
+          <div class="tariff-card">
+            <div class="vehicle-img-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/2019_Maruti_Suzuki_Ertiga_ZXi%2B%2C_front_8.15.19.jpg/640px-2019_Maruti_Suzuki_Ertiga_ZXi%2B%2C_front_8.15.19.jpg" alt="Ertiga" />
             </div>
-            <div class="tariff-rate">
-              <span class="rate-label">Local (8hr/80km)</span>
-              <span class="rate-value">₹1,800</span>
+            <div class="tariff-body">
+              <h5 class="vehicle-name">Ertiga SUV</h5>
+              <p class="vehicle-model text-muted small">Maruti Ertiga / Kia Carens</p>
+              <ul class="vehicle-specs list-unstyled">
+                <li><i class="fas fa-users me-2 text-warning"></i>6 Passengers</li>
+                <li><i class="fas fa-suitcase me-2 text-warning"></i>3 Bags</li>
+                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
+              </ul>
+              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹14 / km</span></div>
+              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹1,500</span></div>
+              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
             </div>
-            <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
           </div>
         </div>
-      </div>
 
-      <div class="col-lg-3 col-md-6">
-        <div class="tariff-card h-100">
-          <div class="vehicle-img-wrap">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Force_Traveller_26_seater.jpg/640px-Force_Traveller_26_seater.jpg"
-                 alt="Tempo Traveller" class="img-fluid" />
-          </div>
-          <div class="tariff-body">
-            <h5 class="vehicle-name">Tempo Traveller</h5>
-            <p class="vehicle-model text-muted small">Force Traveller 12 Seater</p>
-            <ul class="vehicle-specs list-unstyled">
-              <li><i class="fas fa-users me-2 text-warning"></i>12 Passengers</li>
-              <li><i class="fas fa-suitcase me-2 text-warning"></i>6 Bags</li>
-              <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-            </ul>
-            <div class="tariff-rate">
-              <span class="rate-label">Outstation Rate</span>
-              <span class="rate-value">₹22 / km</span>
+        <!-- ── Card 3 : Innova (popular) ── -->
+        <div class="slider-item">
+          <div class="tariff-card popular">
+            <div class="popular-badge">Most Popular</div>
+            <div class="vehicle-img-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Toyota-Innova-2012.jpg/640px-Toyota-Innova-2012.jpg" alt="Innova" />
             </div>
-            <div class="tariff-rate">
-              <span class="rate-label">Local (8hr/80km)</span>
-              <span class="rate-value">₹3,000</span>
+            <div class="tariff-body">
+              <h5 class="vehicle-name">Innova</h5>
+              <p class="vehicle-model text-muted small">Toyota Innova</p>
+              <ul class="vehicle-specs list-unstyled">
+                <li><i class="fas fa-users me-2 text-warning"></i>7 Passengers</li>
+                <li><i class="fas fa-suitcase me-2 text-warning"></i>4 Bags</li>
+                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
+              </ul>
+              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹16 / km</span></div>
+              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹1,800</span></div>
+              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
             </div>
-            <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
           </div>
         </div>
-      </div>
 
-      <div class="col-lg-3 col-md-6">
-        <div class="tariff-card h-100">
-          <div class="vehicle-img-wrap">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tata_Winger_Minibus_in_India.jpg/640px-Tata_Winger_Minibus_in_India.jpg"
-                 alt="Mini Bus" class="img-fluid" />
-          </div>
-          <div class="tariff-body">
-            <h5 class="vehicle-name">Mini Bus</h5>
-            <p class="vehicle-model text-muted small">20–26 Seater Bus</p>
-            <ul class="vehicle-specs list-unstyled">
-              <li><i class="fas fa-users me-2 text-warning"></i>20–26 Passengers</li>
-              <li><i class="fas fa-suitcase me-2 text-warning"></i>Large Luggage</li>
-              <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-            </ul>
-            <div class="tariff-rate">
-              <span class="rate-label">Outstation Rate</span>
-              <span class="rate-value">₹35 / km</span>
+        <!-- ── Card 4 : Innova Crysta ── -->
+        <div class="slider-item">
+          <div class="tariff-card">
+            <div class="vehicle-img-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Toyota_Innova_Crysta_2.4_VX_MT_%28facelift%2C_white%29%2C_front_8.15.19.jpg/640px-Toyota_Innova_Crysta_2.4_VX_MT_%28facelift%2C_white%29%2C_front_8.15.19.jpg" alt="Innova Crysta" />
             </div>
-            <div class="tariff-rate">
-              <span class="rate-label">Local (8hr/80km)</span>
-              <span class="rate-value">₹5,000</span>
+            <div class="tariff-body">
+              <h5 class="vehicle-name">Innova Crysta</h5>
+              <p class="vehicle-model text-muted small">Toyota Innova Crysta</p>
+              <ul class="vehicle-specs list-unstyled">
+                <li><i class="fas fa-users me-2 text-warning"></i>7 Passengers</li>
+                <li><i class="fas fa-suitcase me-2 text-warning"></i>4 Bags</li>
+                <li><i class="fas fa-snowflake me-2 text-warning"></i>Premium AC</li>
+              </ul>
+              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹18 / km</span></div>
+              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹2,200</span></div>
+              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
             </div>
-            <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
           </div>
         </div>
-      </div>
 
-    </div>
-    <p class="text-center text-muted mt-4 small">
+        <!-- ── Card 5 : Tempo Traveller ── -->
+        <div class="slider-item">
+          <div class="tariff-card">
+            <div class="vehicle-img-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Force_Traveller_26_seater.jpg/640px-Force_Traveller_26_seater.jpg" alt="Tempo Traveller" />
+            </div>
+            <div class="tariff-body">
+              <h5 class="vehicle-name">Tempo Traveller</h5>
+              <p class="vehicle-model text-muted small">Force Traveller 12 Seater</p>
+              <ul class="vehicle-specs list-unstyled">
+                <li><i class="fas fa-users me-2 text-warning"></i>12 Passengers</li>
+                <li><i class="fas fa-suitcase me-2 text-warning"></i>6 Bags</li>
+                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
+              </ul>
+              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹22 / km</span></div>
+              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹3,000</span></div>
+              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Card 6 : Mini Bus ── -->
+        <div class="slider-item">
+          <div class="tariff-card">
+            <div class="vehicle-img-wrap">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tata_Winger_Minibus_in_India.jpg/640px-Tata_Winger_Minibus_in_India.jpg" alt="Mini Bus" />
+            </div>
+            <div class="tariff-body">
+              <h5 class="vehicle-name">Mini Bus</h5>
+              <p class="vehicle-model text-muted small">20–26 Seater Bus</p>
+              <ul class="vehicle-specs list-unstyled">
+                <li><i class="fas fa-users me-2 text-warning"></i>20–26 Passengers</li>
+                <li><i class="fas fa-suitcase me-2 text-warning"></i>Large Luggage</li>
+                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
+              </ul>
+              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹35 / km</span></div>
+              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹5,000</span></div>
+              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /slider-track -->
+    </div><!-- /slider-viewport -->
+
+    <p class="text-center text-muted mt-4 small px-3">
       <i class="fas fa-info-circle me-1"></i>
-      Rates are indicative. Final price depends on distance, tolls, and driver batta. Minimum 250 km/day for outstation.
+      Rates are indicative. Final price depends on distance, tolls &amp; driver batta. Minimum 250 km/day for outstation.
     </p>
   </div>
 </section>
 
 <!-- ======= TOUR PACKAGES ======= -->
 <section id="packages" class="packages-section py-5">
-  <div class="container">
-    <div class="text-center mb-5">
+  <div class="container-fluid px-0">
+    <div class="text-center mb-5 px-3">
       <div class="section-label">Travel Packages</div>
       <h2 class="section-title">Popular Tour Packages</h2>
-      <p class="text-muted">Explore handpicked destinations from Madurai</p>
+      <p class="text-muted">Explore handpicked destinations from Madurai · Hover to pause</p>
     </div>
 
-    <!-- Tamil Nadu -->
-    <h4 class="pkg-region-title mb-3"><i class="fas fa-map-marker-alt me-2 text-warning"></i>Tamil Nadu</h4>
-    <div class="row g-4 mb-5">
-      <div class="col-md-3 col-sm-6">
-        <div class="pkg-card h-100">
-          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=400&q=80')">
-            <div class="pkg-overlay"></div>
-            <div class="pkg-name">Rameshwaram</div>
-          </div>
-          <div class="pkg-body">
-            <p class="small text-muted mb-2">Dhanushkodi · Pamban Bridge · Ramanathaswamy Temple</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="pkg-dist"><i class="fas fa-route me-1"></i>175 km</span>
-              <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Rameshwaram%20tour%20package"
-                 target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="pkg-card h-100">
-          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80')">
-            <div class="pkg-overlay"></div>
-            <div class="pkg-name">Kanyakumari</div>
-          </div>
-          <div class="pkg-body">
-            <p class="small text-muted mb-2">Vivekananda Rock · Thiruvalluvar Statue · Sunrise Point</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="pkg-dist"><i class="fas fa-route me-1"></i>245 km</span>
-              <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Kanyakumari%20tour%20package"
-                 target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="pkg-card h-100">
-          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=400&q=80')">
-            <div class="pkg-overlay"></div>
-            <div class="pkg-name">Kodaikanal</div>
-          </div>
-          <div class="pkg-body">
-            <p class="small text-muted mb-2">Coaker's Walk · Pillar Rocks · Kodai Lake · Bryant Park</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="pkg-dist"><i class="fas fa-route me-1"></i>120 km</span>
-              <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Kodaikanal%20tour%20package"
-                 target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="pkg-card h-100">
-          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?w=400&q=80')">
-            <div class="pkg-overlay"></div>
-            <div class="pkg-name">Ooty</div>
-          </div>
-          <div class="pkg-body">
-            <p class="small text-muted mb-2">Botanical Garden · Doddabetta Peak · Toy Train · Lake</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="pkg-dist"><i class="fas fa-route me-1"></i>215 km</span>
-              <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Ooty%20tour%20package"
-                 target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Packages Slider -->
+    <div class="slider-viewport" id="pkgViewport">
+      <div class="slider-track" id="pkgTrack">
 
-    <!-- Kerala -->
-    <h4 class="pkg-region-title mb-3"><i class="fas fa-map-marker-alt me-2 text-warning"></i>Kerala</h4>
-    <div class="row g-4">
-      <div class="col-md-4 col-sm-6">
-        <div class="pkg-card h-100">
-          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1567653418950-9b4d04e4e005?w=400&q=80')">
-            <div class="pkg-overlay"></div>
-            <div class="pkg-name">Munnar</div>
-          </div>
-          <div class="pkg-body">
-            <p class="small text-muted mb-2">Tea Gardens · Eravikulam National Park · Top Station</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="pkg-dist"><i class="fas fa-route me-1"></i>280 km</span>
-              <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Munnar%20tour%20package"
-                 target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Tamil Nadu</div>
+              <div class="pkg-name">Rameshwaram</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Dhanushkodi · Pamban Bridge · Ramanathaswamy Temple</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>175 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Rameshwaram%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="pkg-card h-100">
-          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&q=80')">
-            <div class="pkg-overlay"></div>
-            <div class="pkg-name">Thekkady</div>
-          </div>
-          <div class="pkg-body">
-            <p class="small text-muted mb-2">Periyar Tiger Reserve · Spice Plantation · Boat Safari</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="pkg-dist"><i class="fas fa-route me-1"></i>200 km</span>
-              <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Thekkady%20tour%20package"
-                 target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1597074866923-dc0589150358?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Tamil Nadu</div>
+              <div class="pkg-name">Kanyakumari</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Vivekananda Rock · Thiruvalluvar Statue · Sunrise Point</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>245 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Kanyakumari%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="pkg-card h-100">
-          <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=400&q=80')">
-            <div class="pkg-overlay"></div>
-            <div class="pkg-name">Alleppey</div>
-          </div>
-          <div class="pkg-body">
-            <p class="small text-muted mb-2">Houseboat · Backwaters · Vembanad Lake · Beach</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="pkg-dist"><i class="fas fa-route me-1"></i>360 km</span>
-              <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Alleppey%20tour%20package"
-                 target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Tamil Nadu</div>
+              <div class="pkg-name">Kodaikanal</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Coaker's Walk · Pillar Rocks · Kodai Lake</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>120 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Kodaikanal%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Tamil Nadu</div>
+              <div class="pkg-name">Ooty</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Botanical Garden · Doddabetta Peak · Toy Train</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>215 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Ooty%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Tamil Nadu</div>
+              <div class="pkg-name">Palani</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Murugan Temple · Rope-car · Thaipusam Festival</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>100 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Palani%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1567653418950-9b4d04e4e005?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Kerala</div>
+              <div class="pkg-name">Munnar</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Tea Gardens · Eravikulam National Park · Top Station</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>280 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Munnar%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Kerala</div>
+              <div class="pkg-name">Thekkady</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Periyar Tiger Reserve · Spice Plantation · Boat Safari</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>200 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Thekkady%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Kerala</div>
+              <div class="pkg-name">Alleppey</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Houseboat · Backwaters · Vembanad Lake</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>360 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Alleppey%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item pkg-slider-item">
+          <div class="pkg-card">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80')">
+              <div class="pkg-overlay"></div>
+              <div class="pkg-region-tag">Kerala</div>
+              <div class="pkg-name">Wayanad</div>
+            </div>
+            <div class="pkg-body">
+              <p class="small text-muted mb-2">Banasura Sagar Dam · Edakkal Caves · Wildlife Sanctuary</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="pkg-dist"><i class="fas fa-route me-1"></i>330 km</span>
+                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Wayanad%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /slider-track -->
+    </div><!-- /slider-viewport -->
   </div>
 </section>
 
