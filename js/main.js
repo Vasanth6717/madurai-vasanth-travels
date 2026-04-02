@@ -115,27 +115,59 @@ function submitContact(e) {
   window.open(url, '_blank');
 }
 
-/* ---- Animate elements on scroll (Intersection Observer) ---- */
-const animElements = document.querySelectorAll(
-  '.service-card, .why-card, .feature-item'
-);
+/* ---- Stagger fade-up on scroll ---- */
+document.addEventListener('DOMContentLoaded', () => {
+  const animEls = document.querySelectorAll(
+    '.service-card, .why-card, .feature-item, .tariff-card, .pkg-card, .contact-item, .booking-card'
+  );
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, 80 * (entry.target.dataset.delay || 0));
+        fadeObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-      observer.unobserve(entry.target);
-    }
+  animEls.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity .55s ease, transform .55s ease';
+    el.dataset.delay = i % 6;
+    fadeObs.observe(el);
   });
-}, { threshold: 0.1 });
-
-animElements.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
 });
+
+/* ---- Animated counter for stats bar ---- */
+function animateCounter(el, target, duration) {
+  const start = performance.now();
+  const update = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    el.textContent = Math.floor(ease * target);
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(update);
+}
+
+const statsBar = document.querySelector('.stats-bar');
+if (statsBar) {
+  let counted = false;
+  const statsObs = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !counted) {
+      counted = true;
+      document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+        animateCounter(el, parseInt(el.dataset.target), 1800);
+      });
+    }
+  }, { threshold: 0.5 });
+  statsObs.observe(statsBar);
+}
 
 /* ============================================================
    Infinite Auto-Scroll Sliders with Arrow Navigation
