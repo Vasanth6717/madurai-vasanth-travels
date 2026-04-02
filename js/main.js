@@ -78,7 +78,7 @@ function submitBooking(e) {
   }
 
   const msg =
-    `*New Taxi Booking — Madurai Vasanth Travels*\n\n` +
+    `*New Taxi Booking — MeenaxiGo*\n\n` +
     `👤 *Name:* ${name}\n` +
     `📞 *Phone:* ${phone}\n` +
     `📍 *Pickup:* ${pickup}\n` +
@@ -106,7 +106,7 @@ function submitContact(e) {
   }
 
   const text =
-    `*Message from Website — Madurai Vasanth Travels*\n\n` +
+    `*Message from Website — MeenaxiGo*\n\n` +
     `👤 *Name:* ${name}\n` +
     `📞 *Phone:* ${phone}\n` +
     `💬 *Message:* ${msg}`;

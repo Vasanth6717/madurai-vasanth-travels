@@ -71,9 +71,20 @@ body {
   box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 
-.brand-icon { color: var(--yellow); font-size: 1.4rem; }
-.brand-name { font-size: 1.1rem; font-weight: 700; color: #fff; }
-.brand-highlight { color: var(--yellow); }
+/* Navbar & Footer Logo */
+.navbar-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.05);
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0.9);
+}
 
 .navbar-nav .nav-link {
   color: #ddd !important;
