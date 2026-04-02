@@ -3,48 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MeenaxiGo - Best Taxi Service in Madurai. 24/7 Outstation, Local Tours, Airport Transfers. Travel Smart. Travel Sacred." />
+  <meta name="description" content="MeenaxiGo - Best Taxi Service in Madurai. 24/7 Outstation, Local Tours, Airport Transfers. Your Journey Begins Here." />
   <title>MeenaxiGo | Best Taxi Service in Madurai</title>
-
-  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome 6 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-  <!-- Custom CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- ======= TOP BAR ======= -->
+<!-- ===== TOP BAR ===== -->
 <div class="top-bar">
-  <div class="container d-flex justify-content-between align-items-center py-1">
-    <span><i class="fas fa-envelope me-2"></i>meenaxigo.madurai@gmail.com</span>
-    <span><i class="fas fa-phone me-2"></i>+91 98765 43210 &nbsp;|&nbsp; <i class="fab fa-whatsapp me-1"></i>WhatsApp Us</span>
+  <div class="container d-flex justify-content-between align-items-center flex-wrap gap-1 py-1">
+    <div class="d-flex gap-3 flex-wrap">
+      <a href="tel:+919876543210"><i class="fas fa-phone-alt me-1"></i>+91 98765 43210</a>
+      <a href="mailto:meenaxigo.madurai@gmail.com"><i class="fas fa-envelope me-1"></i>meenaxigo.madurai@gmail.com</a>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span class="top-bar-label">Follow Us:</span>
+      <a href="#" class="top-social"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="top-social"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919876543210" target="_blank" class="top-social wa"><i class="fab fa-whatsapp"></i></a>
+    </div>
   </div>
 </div>
 
-<!-- ======= NAVBAR ======= -->
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#home">
-      <img src="images/meenaxigo-logo.png" alt="MeenaxiGo" class="navbar-logo" />
+    <a class="navbar-brand" href="#home">
+      <img src="images/hero-bg.png" alt="MeenaxiGo" class="navbar-logo" />
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tariff">Tariff</a></li>
-        <li class="nav-item"><a class="nav-link" href="#packages">Tour Packages</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item ms-lg-3">
-          <a class="btn btn-warning btn-sm fw-bold px-3" href="tel:+919876543210">
-            <i class="fas fa-phone me-1"></i> Call Now
+        <li class="nav-item"><a class="nav-link" href="#tariff">Tariff Details</a></li>
+        <li class="nav-item"><a class="nav-link" href="#packages">Tour Package</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-warning btn-sm fw-bold px-3 py-2" href="tel:+919876543210">
+            <i class="fas fa-phone me-1"></i>Call Now
           </a>
         </li>
       </ul>
@@ -52,86 +55,157 @@
   </div>
 </nav>
 
-<!-- ======= HERO SECTION ======= -->
-<section id="home" class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content text-center text-white">
-    <div class="hero-badge mb-3"><i class="fas fa-star me-1"></i> Travel Smart. Travel Sacred.</div>
-    <h1 class="hero-title">Your Journey Begins Here</h1>
-    <p class="hero-subtitle">24/7 Outstation &nbsp;|&nbsp; Local Tours &nbsp;|&nbsp; Airport Transfers</p>
-    <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
-      <a href="#booking" class="btn btn-warning btn-lg fw-bold px-4">
-        <i class="fas fa-calendar-check me-2"></i>Book Now
-      </a>
-      <a href="https://wa.me/919876543210?text=Hi,%20I%20need%20a%20taxi%20from%20Madurai"
-         class="btn btn-outline-light btn-lg px-4" target="_blank">
-        <i class="fab fa-whatsapp me-2"></i>WhatsApp
-      </a>
+<!-- ===== HERO CAROUSEL ===== -->
+<section id="home">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
     </div>
-    <div class="hero-stats row justify-content-center mt-5 g-3">
-      <div class="col-6 col-md-3">
-        <div class="stat-box"><span class="stat-number">15+</span><span class="stat-label">Years Experience</span></div>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=85')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-caption">
+            <div class="hero-badge animate-fade-up"><i class="fas fa-star me-1"></i>Trusted Since 2010</div>
+            <h1 class="hero-title animate-fade-up delay-1">Your Journey <span class="text-warning">Begins Here</span></h1>
+            <p class="hero-subtitle animate-fade-up delay-2">24/7 Outstation &nbsp;·&nbsp; Local Tours &nbsp;·&nbsp; Airport Transfers</p>
+            <div class="d-flex gap-3 flex-wrap animate-fade-up delay-3">
+              <a href="#booking" class="btn btn-warning btn-lg fw-bold px-4"><i class="fas fa-calendar-check me-2"></i>Book Now</a>
+              <a href="https://wa.me/919876543210?text=Hi,%20I%20need%20a%20taxi" target="_blank" class="btn btn-outline-light btn-lg px-4"><i class="fab fa-whatsapp me-2"></i>WhatsApp</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-box"><span class="stat-number">5000+</span><span class="stat-label">Happy Customers</span></div>
+
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1600&q=85')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-caption">
+            <div class="hero-badge"><i class="fas fa-gopuram me-1"></i>Temple Tourism Experts</div>
+            <h1 class="hero-title">Sacred Journeys <span class="text-warning">Made Easy</span></h1>
+            <p class="hero-subtitle">Rameshwaram · Kanyakumari · Palani · Tirupati</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#packages" class="btn btn-warning btn-lg fw-bold px-4"><i class="fas fa-map-marked-alt me-2"></i>View Packages</a>
+              <a href="tel:+919876543210" class="btn btn-outline-light btn-lg px-4"><i class="fas fa-phone me-2"></i>Call Us</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-box"><span class="stat-number">50+</span><span class="stat-label">AC Vehicles</span></div>
+
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=1600&q=85')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-caption">
+            <div class="hero-badge"><i class="fas fa-water me-1"></i>Kerala Specialists</div>
+            <h1 class="hero-title">Explore <span class="text-warning">God's Own Country</span></h1>
+            <p class="hero-subtitle">Munnar · Thekkady · Alleppey · Wayanad</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#packages" class="btn btn-warning btn-lg fw-bold px-4"><i class="fas fa-route me-2"></i>Kerala Tours</a>
+              <a href="https://wa.me/919876543210?text=I%20need%20a%20Kerala%20tour%20package" target="_blank" class="btn btn-outline-light btn-lg px-4"><i class="fab fa-whatsapp me-2"></i>Enquire</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-box"><span class="stat-number">24/7</span><span class="stat-label">Available</span></div>
+
+      <div class="carousel-item">
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1567653418950-9b4d04e4e005?w=1600&q=85')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-caption">
+            <div class="hero-badge"><i class="fas fa-mountain me-1"></i>Hill Station Tours</div>
+            <h1 class="hero-title">Misty Hills &amp; <span class="text-warning">Beautiful Roads</span></h1>
+            <p class="hero-subtitle">Ooty · Kodaikanal · Munnar · Coorg</p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#booking" class="btn btn-warning btn-lg fw-bold px-4"><i class="fas fa-car me-2"></i>Book a Ride</a>
+              <a href="#tariff" class="btn btn-outline-light btn-lg px-4"><i class="fas fa-tags me-2"></i>View Tariff</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /carousel-inner -->
+
+    <button class="carousel-control-prev hero-ctrl" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="hero-ctrl-icon"><i class="fas fa-chevron-left"></i></span>
+    </button>
+    <button class="carousel-control-next hero-ctrl" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="hero-ctrl-icon"><i class="fas fa-chevron-right"></i></span>
+    </button>
+
+  </div><!-- /carousel -->
+
+  <!-- Stats bar below carousel -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="row g-0 text-center">
+        <div class="col-6 col-md-3 stat-item">
+          <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="col-6 col-md-3 stat-item">
+          <span class="stat-number" data-target="5000">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+        <div class="col-6 col-md-3 stat-item">
+          <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">AC Vehicles</span>
+        </div>
+        <div class="col-6 col-md-3 stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Available</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= BOOKING FORM ======= -->
+<!-- ===== BOOKING FORM ===== -->
 <section id="booking" class="booking-section py-5">
   <div class="container">
     <div class="booking-card shadow-lg">
-      <div class="booking-header text-center mb-4">
+      <div class="text-center mb-4">
+        <div class="section-label">Quick Booking</div>
         <h2 class="section-title mb-1">Book Your Ride</h2>
-        <p class="text-muted">Fill in the details and we'll get back to you instantly</p>
+        <p class="text-muted">Fill in the details and we'll confirm instantly</p>
       </div>
       <form id="bookingForm" onsubmit="submitBooking(event)">
         <div class="row g-3">
           <div class="col-md-6">
-            <label class="form-label fw-semibold">Your Name *</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
-              <input type="text" class="form-control" id="bookName" placeholder="Enter your name" required />
+              <input type="text" class="form-control" id="bookName" placeholder="Your Name *" required />
             </div>
           </div>
           <div class="col-md-6">
-            <label class="form-label fw-semibold">Phone Number *</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-phone"></i></span>
-              <input type="tel" class="form-control" id="bookPhone" placeholder="+91 XXXXX XXXXX" required />
+              <input type="tel" class="form-control" id="bookPhone" placeholder="Phone Number *" required />
             </div>
           </div>
           <div class="col-md-6">
-            <label class="form-label fw-semibold">Pickup Location *</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
-              <input type="text" class="form-control" id="bookPickup" placeholder="Pickup city / address" required />
+              <input type="text" class="form-control" id="bookPickup" placeholder="Pickup Location *" required />
             </div>
           </div>
           <div class="col-md-6">
-            <label class="form-label fw-semibold">Drop Location *</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-map-pin"></i></span>
-              <input type="text" class="form-control" id="bookDrop" placeholder="Destination city / address" required />
+              <input type="text" class="form-control" id="bookDrop" placeholder="Drop Location *" required />
             </div>
           </div>
           <div class="col-md-4">
-            <label class="form-label fw-semibold">Travel Date *</label>
             <div class="input-group">
               <span class="input-group-text"><i class="fas fa-calendar"></i></span>
               <input type="date" class="form-control" id="bookDate" required />
             </div>
           </div>
           <div class="col-md-4">
-            <label class="form-label fw-semibold">Trip Type</label>
             <select class="form-select" id="bookTrip">
               <option value="One Way">One Way</option>
               <option value="Round Trip">Round Trip</option>
@@ -140,18 +214,19 @@
             </select>
           </div>
           <div class="col-md-4">
-            <label class="form-label fw-semibold">Vehicle Type *</label>
             <select class="form-select" id="bookVehicle" required>
-              <option value="">Select Vehicle</option>
-              <option value="Sedan (Dzire/Etios)">Sedan (Dzire / Etios)</option>
-              <option value="SUV (Innova/Ertiga)">SUV (Innova / Ertiga)</option>
-              <option value="Tempo Traveller (12 Seater)">Tempo Traveller (12 Seater)</option>
-              <option value="Mini Bus (20 Seater)">Mini Bus (20 Seater)</option>
+              <option value="">Select Vehicle *</option>
+              <option>Sedan (Dzire / Etios)</option>
+              <option>Ertiga SUV</option>
+              <option>Innova (7 Seater)</option>
+              <option>Innova Crysta</option>
+              <option>Tempo Traveller (12 Seater)</option>
+              <option>Mini Bus (20–26 Seater)</option>
             </select>
           </div>
           <div class="col-12 text-center mt-2">
             <button type="submit" class="btn btn-warning btn-lg fw-bold px-5">
-              <i class="fab fa-whatsapp me-2"></i>Send Booking on WhatsApp
+              <i class="fab fa-whatsapp me-2"></i>Send Booking via WhatsApp
             </button>
           </div>
         </div>
@@ -160,14 +235,18 @@
   </div>
 </section>
 
-<!-- ======= ABOUT SECTION ======= -->
+<!-- ===== ABOUT ===== -->
 <section id="about" class="about-section py-5">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
-        <div class="about-img-wrapper position-relative">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80"
-               alt="Taxi in Madurai" class="img-fluid rounded-3 shadow" />
+        <div class="about-img-grid">
+          <div class="about-img-main zoom-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="MeenaxiGo Taxi" class="zoom-img" />
+          </div>
+          <div class="about-img-thumb zoom-wrap">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&q=80" alt="Night road" class="zoom-img" />
+          </div>
           <div class="experience-badge">
             <span class="exp-number">15+</span>
             <span class="exp-text">Years of Trust</span>
@@ -175,65 +254,28 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="section-label">About Us</div>
+        <div class="section-label">About MeenaxiGo</div>
         <h2 class="section-title">Your Reliable Travel Partner in Madurai</h2>
-        <p class="text-muted mt-3">
-          MeenaxiGo has been providing safe, comfortable, and affordable taxi services across
-          Tamil Nadu and Kerala since 2010. Based in the heart of Madurai, we specialize in outstation trips,
-          temple tours, airport transfers, and corporate travel.
-        </p>
-        <p class="text-muted">
-          Our fleet of well-maintained AC vehicles and experienced drivers ensure you reach your destination
-          safely and on time — every time. Whether it's a solo trip to Rameshwaram or a family tour package
-          to Kerala, we've got you covered.
-        </p>
+        <p class="text-muted mt-3">MeenaxiGo has been providing safe, comfortable, and affordable taxi services across Tamil Nadu and Kerala since 2010. Based in the heart of Madurai, we specialize in outstation trips, temple tours, airport transfers, and corporate travel.</p>
+        <p class="text-muted">Our fleet of well-maintained AC vehicles and experienced drivers ensure you reach your destination safely and on time — every time.</p>
         <div class="row g-3 mt-2">
-          <div class="col-6">
-            <div class="feature-item">
-              <i class="fas fa-shield-alt feature-icon"></i>
-              <span>Safe &amp; Reliable</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-item">
-              <i class="fas fa-snowflake feature-icon"></i>
-              <span>100% AC Vehicles</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-item">
-              <i class="fas fa-clock feature-icon"></i>
-              <span>24/7 Service</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-item">
-              <i class="fas fa-rupee-sign feature-icon"></i>
-              <span>Best Price Guaranteed</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-item">
-              <i class="fas fa-user-tie feature-icon"></i>
-              <span>Professional Drivers</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="feature-item">
-              <i class="fas fa-map-marked-alt feature-icon"></i>
-              <span>All Tamil Nadu &amp; Kerala</span>
-            </div>
-          </div>
+          <div class="col-6"><div class="feature-item"><i class="fas fa-shield-alt feature-icon"></i><span>Safe &amp; Reliable</span></div></div>
+          <div class="col-6"><div class="feature-item"><i class="fas fa-snowflake feature-icon"></i><span>100% AC Vehicles</span></div></div>
+          <div class="col-6"><div class="feature-item"><i class="fas fa-clock feature-icon"></i><span>24/7 Service</span></div></div>
+          <div class="col-6"><div class="feature-item"><i class="fas fa-rupee-sign feature-icon"></i><span>Best Price Guaranteed</span></div></div>
+          <div class="col-6"><div class="feature-item"><i class="fas fa-user-tie feature-icon"></i><span>Professional Drivers</span></div></div>
+          <div class="col-6"><div class="feature-item"><i class="fas fa-map-marked-alt feature-icon"></i><span>All TN &amp; Kerala</span></div></div>
         </div>
-        <a href="#booking" class="btn btn-warning fw-bold mt-4 px-4">
-          <i class="fas fa-taxi me-2"></i>Book a Taxi
-        </a>
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <a href="#booking" class="btn btn-warning fw-bold px-4"><i class="fas fa-taxi me-2"></i>Book a Taxi</a>
+          <a href="tel:+919876543210" class="btn btn-outline-dark fw-bold px-4"><i class="fas fa-phone me-2"></i>+91 98765 43210</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= SERVICES SECTION ======= -->
+<!-- ===== SERVICES ===== -->
 <section id="services" class="services-section py-5">
   <div class="container">
     <div class="text-center mb-5">
@@ -243,380 +285,386 @@
     <div class="row g-4">
       <div class="col-md-4 col-sm-6">
         <div class="service-card h-100">
-          <div class="service-icon"><i class="fas fa-city"></i></div>
-          <h5>Local City Tours</h5>
-          <p>Explore Madurai's famous sights — Meenakshi Amman Temple, Thiruparankundram, Gandhi Museum and more at affordable hourly rates.</p>
+          <div class="service-img zoom-wrap"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=500&q=80" alt="City Tours" class="zoom-img" /></div>
+          <div class="service-body">
+            <div class="service-icon"><i class="fas fa-city"></i></div>
+            <h5>Local City Tours</h5>
+            <p>Explore Madurai's famous sights — Meenakshi Temple, Thiruparankundram, Gandhi Museum at affordable hourly rates.</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-card h-100">
-          <div class="service-icon"><i class="fas fa-road"></i></div>
-          <h5>Outstation Trips</h5>
-          <p>One-way and round-trip outstation cabs to any destination in Tamil Nadu, Kerala, Karnataka and Andhra Pradesh.</p>
+          <div class="service-img zoom-wrap"><img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?w=500&q=80" alt="Outstation" class="zoom-img" /></div>
+          <div class="service-body">
+            <div class="service-icon"><i class="fas fa-road"></i></div>
+            <h5>Outstation Trips</h5>
+            <p>One-way and round-trip outstation cabs across Tamil Nadu, Kerala, Karnataka and Andhra Pradesh.</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-card h-100">
-          <div class="service-icon"><i class="fas fa-plane-arrival"></i></div>
-          <h5>Airport Transfers</h5>
-          <p>Timely pick-up and drop at Madurai Airport (IXM), Chennai, Coimbatore and Trichy airports. Flight tracking included.</p>
+          <div class="service-img zoom-wrap"><img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=80" alt="Airport" class="zoom-img" /></div>
+          <div class="service-body">
+            <div class="service-icon"><i class="fas fa-plane-arrival"></i></div>
+            <h5>Airport Transfers</h5>
+            <p>Timely pick-up and drop at Madurai, Chennai, Coimbatore and Trichy airports. Flight tracking included.</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-card h-100">
-          <div class="service-icon"><i class="fas fa-gopuram"></i></div>
-          <h5>Temple Tourism</h5>
-          <p>Sacred circuits — Meenakshi Amman, Rameshwaram, Kanyakumari, Palani, Sabarimala, Tirupati and more divine destinations.</p>
+          <div class="service-img zoom-wrap"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500&q=80" alt="Temple Tour" class="zoom-img" /></div>
+          <div class="service-body">
+            <div class="service-icon"><i class="fas fa-gopuram"></i></div>
+            <h5>Temple Tourism</h5>
+            <p>Sacred circuits — Meenakshi Amman, Rameshwaram, Kanyakumari, Palani, Sabarimala and Tirupati.</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-card h-100">
-          <div class="service-icon"><i class="fas fa-mountain"></i></div>
-          <h5>Kerala &amp; Hill Station Tours</h5>
-          <p>Curated tour packages to Munnar, Thekkady, Alleppey, Ooty, Kodaikanal and Coorg with comfortable vehicles.</p>
+          <div class="service-img zoom-wrap"><img src="https://images.unsplash.com/photo-1567653418950-9b4d04e4e005?w=500&q=80" alt="Kerala Tour" class="zoom-img" /></div>
+          <div class="service-body">
+            <div class="service-icon"><i class="fas fa-mountain"></i></div>
+            <h5>Kerala &amp; Hill Stations</h5>
+            <p>Curated packages to Munnar, Thekkady, Alleppey, Ooty, Kodaikanal with comfortable AC vehicles.</p>
+          </div>
         </div>
       </div>
       <div class="col-md-4 col-sm-6">
         <div class="service-card h-100">
-          <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-          <h5>Corporate Travel</h5>
-          <p>Reliable employee transport, executive car hire and conference travel for businesses in and around Madurai.</p>
+          <div class="service-img zoom-wrap"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&q=80" alt="Corporate" class="zoom-img" /></div>
+          <div class="service-body">
+            <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+            <h5>Corporate Travel</h5>
+            <p>Reliable employee transport, executive car hire and conference travel for businesses in Madurai.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= TARIFF SECTION ======= -->
+<!-- ===== TARIFF (Auto-scroll slider + arrows) ===== -->
 <section id="tariff" class="tariff-section py-5">
   <div class="container-fluid px-0">
     <div class="text-center mb-5 px-3">
       <div class="section-label">Pricing</div>
-      <h2 class="section-title">Vehicle &amp; Tariff</h2>
-      <p class="text-muted">Transparent pricing — no hidden charges · Hover to pause</p>
+      <h2 class="section-title">Our Service Taxi</h2>
+      <p class="text-muted">Transparent pricing · No hidden charges · Hover to pause</p>
     </div>
-
-    <!-- Slider wrapper -->
     <div class="slider-wrapper">
       <button class="slider-arrow slider-prev" id="tariffPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
       <div class="slider-viewport" id="tariffViewport">
         <div class="slider-track" id="tariffTrack">
 
-        <!-- ── Card 1 : Sedan ── -->
-        <div class="slider-item">
-          <div class="tariff-card">
-            <div class="vehicle-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Maruti_Suzuki_Dzire_2017.jpg/640px-Maruti_Suzuki_Dzire_2017.jpg" alt="Sedan" />
-            </div>
-            <div class="tariff-body">
-              <h5 class="vehicle-name">Sedan</h5>
-              <p class="vehicle-model text-muted small">Swift Dzire / Toyota Etios</p>
-              <ul class="vehicle-specs list-unstyled">
-                <li><i class="fas fa-users me-2 text-warning"></i>4 Passengers</li>
-                <li><i class="fas fa-suitcase me-2 text-warning"></i>2 Bags</li>
-                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-              </ul>
-              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹12 / km</span></div>
-              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹1,200</span></div>
-              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+          <div class="slider-item">
+            <div class="tariff-card">
+              <div class="vehicle-img-wrap zoom-wrap">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Maruti_Suzuki_Dzire_2017.jpg/640px-Maruti_Suzuki_Dzire_2017.jpg" alt="Sedan" class="zoom-img" />
+              </div>
+              <div class="tariff-body">
+                <h5 class="vehicle-name">Sedan</h5>
+                <p class="vehicle-model">Swift Dzire / Toyota Etios</p>
+                <ul class="vehicle-specs list-unstyled">
+                  <li><i class="fas fa-users"></i>4 Passengers</li>
+                  <li><i class="fas fa-suitcase"></i>2 Bags</li>
+                  <li><i class="fas fa-snowflake"></i>AC</li>
+                </ul>
+                <div class="tariff-rate"><span>Outstation</span><span class="rate-value">₹12 / km</span></div>
+                <div class="tariff-rate"><span>Local 8hr/80km</span><span class="rate-value">₹1,200</span></div>
+                <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- ── Card 2 : Ertiga ── -->
-        <div class="slider-item">
-          <div class="tariff-card">
-            <div class="vehicle-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/2019_Maruti_Suzuki_Ertiga_ZXi%2B%2C_front_8.15.19.jpg/640px-2019_Maruti_Suzuki_Ertiga_ZXi%2B%2C_front_8.15.19.jpg" alt="Ertiga" />
-            </div>
-            <div class="tariff-body">
-              <h5 class="vehicle-name">Ertiga SUV</h5>
-              <p class="vehicle-model text-muted small">Maruti Ertiga / Kia Carens</p>
-              <ul class="vehicle-specs list-unstyled">
-                <li><i class="fas fa-users me-2 text-warning"></i>6 Passengers</li>
-                <li><i class="fas fa-suitcase me-2 text-warning"></i>3 Bags</li>
-                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-              </ul>
-              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹14 / km</span></div>
-              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹1,500</span></div>
-              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+          <div class="slider-item">
+            <div class="tariff-card">
+              <div class="vehicle-img-wrap zoom-wrap">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/2019_Maruti_Suzuki_Ertiga_ZXi%2B%2C_front_8.15.19.jpg/640px-2019_Maruti_Suzuki_Ertiga_ZXi%2B%2C_front_8.15.19.jpg" alt="Ertiga" class="zoom-img" />
+              </div>
+              <div class="tariff-body">
+                <h5 class="vehicle-name">Ertiga SUV</h5>
+                <p class="vehicle-model">Maruti Ertiga / Kia Carens</p>
+                <ul class="vehicle-specs list-unstyled">
+                  <li><i class="fas fa-users"></i>6 Passengers</li>
+                  <li><i class="fas fa-suitcase"></i>3 Bags</li>
+                  <li><i class="fas fa-snowflake"></i>AC</li>
+                </ul>
+                <div class="tariff-rate"><span>Outstation</span><span class="rate-value">₹14 / km</span></div>
+                <div class="tariff-rate"><span>Local 8hr/80km</span><span class="rate-value">₹1,500</span></div>
+                <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- ── Card 3 : Innova (popular) ── -->
-        <div class="slider-item">
-          <div class="tariff-card popular">
-            <div class="popular-badge">Most Popular</div>
-            <div class="vehicle-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Toyota-Innova-2012.jpg/640px-Toyota-Innova-2012.jpg" alt="Innova" />
-            </div>
-            <div class="tariff-body">
-              <h5 class="vehicle-name">Innova</h5>
-              <p class="vehicle-model text-muted small">Toyota Innova</p>
-              <ul class="vehicle-specs list-unstyled">
-                <li><i class="fas fa-users me-2 text-warning"></i>7 Passengers</li>
-                <li><i class="fas fa-suitcase me-2 text-warning"></i>4 Bags</li>
-                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-              </ul>
-              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹16 / km</span></div>
-              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹1,800</span></div>
-              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+          <div class="slider-item">
+            <div class="tariff-card popular">
+              <div class="popular-badge">Most Popular</div>
+              <div class="vehicle-img-wrap zoom-wrap">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Toyota-Innova-2012.jpg/640px-Toyota-Innova-2012.jpg" alt="Innova" class="zoom-img" />
+              </div>
+              <div class="tariff-body">
+                <h5 class="vehicle-name">Innova</h5>
+                <p class="vehicle-model">Toyota Innova (7 Seater)</p>
+                <ul class="vehicle-specs list-unstyled">
+                  <li><i class="fas fa-users"></i>7 Passengers</li>
+                  <li><i class="fas fa-suitcase"></i>4 Bags</li>
+                  <li><i class="fas fa-snowflake"></i>AC</li>
+                </ul>
+                <div class="tariff-rate"><span>Outstation</span><span class="rate-value">₹16 / km</span></div>
+                <div class="tariff-rate"><span>Local 8hr/80km</span><span class="rate-value">₹1,800</span></div>
+                <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- ── Card 4 : Innova Crysta ── -->
-        <div class="slider-item">
-          <div class="tariff-card">
-            <div class="vehicle-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Toyota_Innova_Crysta_2.4_VX_MT_%28facelift%2C_white%29%2C_front_8.15.19.jpg/640px-Toyota_Innova_Crysta_2.4_VX_MT_%28facelift%2C_white%29%2C_front_8.15.19.jpg" alt="Innova Crysta" />
-            </div>
-            <div class="tariff-body">
-              <h5 class="vehicle-name">Innova Crysta</h5>
-              <p class="vehicle-model text-muted small">Toyota Innova Crysta</p>
-              <ul class="vehicle-specs list-unstyled">
-                <li><i class="fas fa-users me-2 text-warning"></i>7 Passengers</li>
-                <li><i class="fas fa-suitcase me-2 text-warning"></i>4 Bags</li>
-                <li><i class="fas fa-snowflake me-2 text-warning"></i>Premium AC</li>
-              </ul>
-              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹18 / km</span></div>
-              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹2,200</span></div>
-              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+          <div class="slider-item">
+            <div class="tariff-card">
+              <div class="vehicle-img-wrap zoom-wrap">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Toyota_Innova_Crysta_2.4_VX_MT_%28facelift%2C_white%29%2C_front_8.15.19.jpg/640px-Toyota_Innova_Crysta_2.4_VX_MT_%28facelift%2C_white%29%2C_front_8.15.19.jpg" alt="Innova Crysta" class="zoom-img" />
+              </div>
+              <div class="tariff-body">
+                <h5 class="vehicle-name">Innova Crysta</h5>
+                <p class="vehicle-model">Toyota Innova Crysta</p>
+                <ul class="vehicle-specs list-unstyled">
+                  <li><i class="fas fa-users"></i>7 Passengers</li>
+                  <li><i class="fas fa-suitcase"></i>4 Bags</li>
+                  <li><i class="fas fa-snowflake"></i>Premium AC</li>
+                </ul>
+                <div class="tariff-rate"><span>Outstation</span><span class="rate-value">₹18 / km</span></div>
+                <div class="tariff-rate"><span>Local 8hr/80km</span><span class="rate-value">₹2,200</span></div>
+                <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- ── Card 5 : Tempo Traveller ── -->
-        <div class="slider-item">
-          <div class="tariff-card">
-            <div class="vehicle-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Force_Traveller_26_seater.jpg/640px-Force_Traveller_26_seater.jpg" alt="Tempo Traveller" />
-            </div>
-            <div class="tariff-body">
-              <h5 class="vehicle-name">Tempo Traveller</h5>
-              <p class="vehicle-model text-muted small">Force Traveller 12 Seater</p>
-              <ul class="vehicle-specs list-unstyled">
-                <li><i class="fas fa-users me-2 text-warning"></i>12 Passengers</li>
-                <li><i class="fas fa-suitcase me-2 text-warning"></i>6 Bags</li>
-                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-              </ul>
-              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹22 / km</span></div>
-              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹3,000</span></div>
-              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+          <div class="slider-item">
+            <div class="tariff-card">
+              <div class="vehicle-img-wrap zoom-wrap">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Force_Traveller_26_seater.jpg/640px-Force_Traveller_26_seater.jpg" alt="Tempo Traveller" class="zoom-img" />
+              </div>
+              <div class="tariff-body">
+                <h5 class="vehicle-name">Tempo Traveller</h5>
+                <p class="vehicle-model">Force Traveller 12 Seater</p>
+                <ul class="vehicle-specs list-unstyled">
+                  <li><i class="fas fa-users"></i>12 Passengers</li>
+                  <li><i class="fas fa-suitcase"></i>6 Bags</li>
+                  <li><i class="fas fa-snowflake"></i>AC</li>
+                </ul>
+                <div class="tariff-rate"><span>Outstation</span><span class="rate-value">₹22 / km</span></div>
+                <div class="tariff-rate"><span>Local 8hr/80km</span><span class="rate-value">₹3,000</span></div>
+                <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- ── Card 6 : Mini Bus ── -->
-        <div class="slider-item">
-          <div class="tariff-card">
-            <div class="vehicle-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tata_Winger_Minibus_in_India.jpg/640px-Tata_Winger_Minibus_in_India.jpg" alt="Mini Bus" />
-            </div>
-            <div class="tariff-body">
-              <h5 class="vehicle-name">Mini Bus</h5>
-              <p class="vehicle-model text-muted small">20–26 Seater Bus</p>
-              <ul class="vehicle-specs list-unstyled">
-                <li><i class="fas fa-users me-2 text-warning"></i>20–26 Passengers</li>
-                <li><i class="fas fa-suitcase me-2 text-warning"></i>Large Luggage</li>
-                <li><i class="fas fa-snowflake me-2 text-warning"></i>AC</li>
-              </ul>
-              <div class="tariff-rate"><span class="rate-label">Outstation Rate</span><span class="rate-value">₹35 / km</span></div>
-              <div class="tariff-rate"><span class="rate-label">Local (8hr/80km)</span><span class="rate-value">₹5,000</span></div>
-              <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+          <div class="slider-item">
+            <div class="tariff-card">
+              <div class="vehicle-img-wrap zoom-wrap">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Tata_Winger_Minibus_in_India.jpg/640px-Tata_Winger_Minibus_in_India.jpg" alt="Mini Bus" class="zoom-img" />
+              </div>
+              <div class="tariff-body">
+                <h5 class="vehicle-name">Mini Bus</h5>
+                <p class="vehicle-model">20–26 Seater AC Bus</p>
+                <ul class="vehicle-specs list-unstyled">
+                  <li><i class="fas fa-users"></i>20–26 Passengers</li>
+                  <li><i class="fas fa-suitcase"></i>Large Luggage</li>
+                  <li><i class="fas fa-snowflake"></i>AC</li>
+                </ul>
+                <div class="tariff-rate"><span>Outstation</span><span class="rate-value">₹35 / km</span></div>
+                <div class="tariff-rate"><span>Local 8hr/80km</span><span class="rate-value">₹5,000</span></div>
+                <a href="#booking" class="btn btn-warning w-100 mt-3 fw-semibold">Book Now</a>
+              </div>
             </div>
           </div>
-        </div>
 
         </div><!-- /slider-track -->
       </div><!-- /slider-viewport -->
       <button class="slider-arrow slider-next" id="tariffNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-    </div><!-- /slider-wrapper -->
-
+    </div>
     <p class="text-center text-muted mt-4 small px-3">
-      <i class="fas fa-info-circle me-1"></i>
-      Rates are indicative. Final price depends on distance, tolls &amp; driver batta. Minimum 250 km/day for outstation.
+      <i class="fas fa-info-circle me-1"></i>Rates are indicative. Final price depends on distance, tolls &amp; driver batta. Min 250 km/day for outstation.
     </p>
   </div>
 </section>
 
-<!-- ======= TOUR PACKAGES ======= -->
+<!-- ===== TOUR PACKAGES ===== -->
 <section id="packages" class="packages-section py-5">
   <div class="container-fluid px-0">
     <div class="text-center mb-5 px-3">
       <div class="section-label">Travel Packages</div>
       <h2 class="section-title">Popular Tour Packages</h2>
-      <p class="text-muted">Explore handpicked destinations from Madurai · Hover to pause</p>
+      <p class="text-muted">Handpicked destinations from Madurai · Hover to pause · Click Enquire Now</p>
     </div>
-
-    <!-- Packages Slider -->
     <div class="slider-wrapper">
       <button class="slider-arrow slider-prev" id="pkgPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
       <div class="slider-viewport" id="pkgViewport">
         <div class="slider-track" id="pkgTrack">
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Tamil Nadu</div>
-              <div class="pkg-name">Rameshwaram</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Dhanushkodi · Pamban Bridge · Ramanathaswamy Temple</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>175 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Rameshwaram%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Tamil Nadu</span>
+                <div class="pkg-name">Rameshwaram</div>
+              </div>
+              <div class="pkg-body">
+                <p>Dhanushkodi · Pamban Bridge · Ramanathaswamy Temple</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>175 km</span>
+                  <a href="https://wa.me/919876543210?text=Rameshwaram%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1597074866923-dc0589150358?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Tamil Nadu</div>
-              <div class="pkg-name">Kanyakumari</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Vivekananda Rock · Thiruvalluvar Statue · Sunrise Point</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>245 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Kanyakumari%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1597074866923-dc0589150358?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Tamil Nadu</span>
+                <div class="pkg-name">Kanyakumari</div>
+              </div>
+              <div class="pkg-body">
+                <p>Vivekananda Rock · Thiruvalluvar Statue · Sunrise</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>245 km</span>
+                  <a href="https://wa.me/919876543210?text=Kanyakumari%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Tamil Nadu</div>
-              <div class="pkg-name">Kodaikanal</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Coaker's Walk · Pillar Rocks · Kodai Lake</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>120 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Kodaikanal%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Tamil Nadu</span>
+                <div class="pkg-name">Kodaikanal</div>
+              </div>
+              <div class="pkg-body">
+                <p>Coaker's Walk · Pillar Rocks · Kodai Lake</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>120 km</span>
+                  <a href="https://wa.me/919876543210?text=Kodaikanal%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Tamil Nadu</div>
-              <div class="pkg-name">Ooty</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Botanical Garden · Doddabetta Peak · Toy Train</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>215 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Ooty%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1564557287817-3785e38ec1f5?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Tamil Nadu</span>
+                <div class="pkg-name">Ooty</div>
+              </div>
+              <div class="pkg-body">
+                <p>Botanical Garden · Doddabetta Peak · Toy Train</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>215 km</span>
+                  <a href="https://wa.me/919876543210?text=Ooty%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Tamil Nadu</div>
-              <div class="pkg-name">Palani</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Murugan Temple · Rope-car · Thaipusam Festival</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>100 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Palani%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Tamil Nadu</span>
+                <div class="pkg-name">Palani</div>
+              </div>
+              <div class="pkg-body">
+                <p>Murugan Temple · Rope-car · Thaipusam Festival</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>100 km</span>
+                  <a href="https://wa.me/919876543210?text=Palani%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1567653418950-9b4d04e4e005?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Kerala</div>
-              <div class="pkg-name">Munnar</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Tea Gardens · Eravikulam National Park · Top Station</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>280 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Munnar%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1567653418950-9b4d04e4e005?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Kerala</span>
+                <div class="pkg-name">Munnar</div>
+              </div>
+              <div class="pkg-body">
+                <p>Tea Gardens · Eravikulam Park · Top Station</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>280 km</span>
+                  <a href="https://wa.me/919876543210?text=Munnar%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Kerala</div>
-              <div class="pkg-name">Thekkady</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Periyar Tiger Reserve · Spice Plantation · Boat Safari</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>200 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Thekkady%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Kerala</span>
+                <div class="pkg-name">Thekkady</div>
+              </div>
+              <div class="pkg-body">
+                <p>Periyar Tiger Reserve · Spice Plantation · Boat</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>200 km</span>
+                  <a href="https://wa.me/919876543210?text=Thekkady%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Kerala</div>
-              <div class="pkg-name">Alleppey</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Houseboat · Backwaters · Vembanad Lake</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>360 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Alleppey%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Kerala</span>
+                <div class="pkg-name">Alleppey</div>
+              </div>
+              <div class="pkg-body">
+                <p>Houseboat · Backwaters · Vembanad Lake</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>360 km</span>
+                  <a href="https://wa.me/919876543210?text=Alleppey%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="slider-item pkg-slider-item">
-          <div class="pkg-card">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80')">
-              <div class="pkg-overlay"></div>
-              <div class="pkg-region-tag">Kerala</div>
-              <div class="pkg-name">Wayanad</div>
-            </div>
-            <div class="pkg-body">
-              <p class="small text-muted mb-2">Banasura Sagar Dam · Edakkal Caves · Wildlife Sanctuary</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="pkg-dist"><i class="fas fa-route me-1"></i>330 km</span>
-                <a href="https://wa.me/919876543210?text=I%20want%20to%20enquire%20about%20Wayanad%20tour%20package" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+          <div class="slider-item pkg-slider-item">
+            <div class="pkg-card">
+              <div class="pkg-img zoom-wrap" style="background-image:url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=85')">
+                <div class="pkg-overlay"></div>
+                <span class="pkg-region-tag">Kerala</span>
+                <div class="pkg-name">Wayanad</div>
+              </div>
+              <div class="pkg-body">
+                <p>Banasura Sagar Dam · Edakkal Caves · Wildlife</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="pkg-dist"><i class="fas fa-route me-1"></i>330 km</span>
+                  <a href="https://wa.me/919876543210?text=Wayanad%20tour%20enquiry" target="_blank" class="btn btn-sm btn-warning fw-semibold">Enquire Now</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        </div><!-- /slider-track -->
-      </div><!-- /slider-viewport -->
+        </div><!-- /track -->
+      </div><!-- /viewport -->
       <button class="slider-arrow slider-next" id="pkgNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
-    </div><!-- /slider-wrapper -->
+    </div>
   </div>
 </section>
 
-<!-- ======= WHY CHOOSE US ======= -->
+<!-- ===== WHY CHOOSE US ===== -->
 <section class="why-section py-5">
   <div class="container">
     <div class="text-center mb-5">
@@ -624,39 +672,15 @@
       <h2 class="section-title">Why Choose MeenaxiGo?</h2>
     </div>
     <div class="row g-4 text-center">
-      <div class="col-md-3 col-6">
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-rupee-sign"></i></div>
-          <h6>No Hidden Charges</h6>
-          <p class="small text-muted">Price quoted = price paid. Transparent billing always.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-headset"></i></div>
-          <h6>24/7 Support</h6>
-          <p class="small text-muted">Call or WhatsApp us anytime, day or night.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-id-card"></i></div>
-          <h6>Verified Drivers</h6>
-          <p class="small text-muted">Background-checked, licensed, experienced drivers.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-6">
-        <div class="why-card">
-          <div class="why-icon"><i class="fas fa-car"></i></div>
-          <h6>Clean Vehicles</h6>
-          <p class="small text-muted">Well-maintained, sanitized fleet for every trip.</p>
-        </div>
-      </div>
+      <div class="col-md-3 col-6"><div class="why-card"><div class="why-icon"><i class="fas fa-rupee-sign"></i></div><h6>No Hidden Charges</h6><p class="small">Price quoted = price paid. Transparent billing always.</p></div></div>
+      <div class="col-md-3 col-6"><div class="why-card"><div class="why-icon"><i class="fas fa-headset"></i></div><h6>24/7 Support</h6><p class="small">Call or WhatsApp us anytime, day or night.</p></div></div>
+      <div class="col-md-3 col-6"><div class="why-card"><div class="why-icon"><i class="fas fa-id-card"></i></div><h6>Verified Drivers</h6><p class="small">Background-checked, licensed, experienced drivers.</p></div></div>
+      <div class="col-md-3 col-6"><div class="why-card"><div class="why-icon"><i class="fas fa-car"></i></div><h6>Clean Vehicles</h6><p class="small">Well-maintained, sanitized fleet for every trip.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ======= CONTACT SECTION ======= -->
+<!-- ===== CONTACT ===== -->
 <section id="contact" class="contact-section py-5">
   <div class="container">
     <div class="text-center mb-5">
@@ -666,92 +690,47 @@
     <div class="row g-4">
       <div class="col-lg-4">
         <div class="contact-info-card h-100">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <h6>Address</h6>
-              <p class="text-muted mb-0">123, Anna Nagar, Madurai – 625 020<br />Tamil Nadu, India</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <div>
-              <h6>Phone</h6>
-              <p class="text-muted mb-0">
-                <a href="tel:+919876543210" class="text-muted">+91 98765 43210</a><br />
-                <a href="tel:+919876543211" class="text-muted">+91 98765 43211</a>
-              </p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <h6>Email</h6>
-              <p class="text-muted mb-0">
-                <a href="mailto:meenaxigo.madurai@gmail.com" class="text-muted">
-                  meenaxigo.madurai@gmail.com
-                </a>
-              </p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-clock"></i></div>
-            <div>
-              <h6>Available</h6>
-              <p class="text-muted mb-0">24 Hours / 7 Days a Week</p>
-            </div>
-          </div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><h6>Address</h6><p>123, Anna Nagar, Madurai – 625 020<br />Tamil Nadu, India</p></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-phone"></i></div><div><h6>Phone</h6><p><a href="tel:+919876543210">+91 98765 43210</a><br /><a href="tel:+919876543211">+91 98765 43211</a></p></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><h6>Email</h6><p><a href="mailto:meenaxigo.madurai@gmail.com">meenaxigo.madurai@gmail.com</a></p></div></div>
+          <div class="contact-item"><div class="contact-icon"><i class="fas fa-clock"></i></div><div><h6>Available</h6><p>24 Hours / 7 Days a Week</p></div></div>
           <div class="social-links mt-3">
-            <a href="#" class="social-btn facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-btn instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp" title="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
-            </a>
+            <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/919876543210" target="_blank" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
       </div>
-
       <div class="col-lg-4">
         <div class="contact-form-card h-100">
           <h5 class="mb-3">Send a Message</h5>
           <form id="contactForm" onsubmit="submitContact(event)">
-            <div class="mb-3">
-              <input type="text" class="form-control" id="contactName" placeholder="Your Name" required />
-            </div>
-            <div class="mb-3">
-              <input type="tel" class="form-control" id="contactPhone" placeholder="Phone Number" required />
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" id="contactMsg" rows="4" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-warning w-100 fw-bold">
-              <i class="fab fa-whatsapp me-2"></i>Send via WhatsApp
-            </button>
+            <div class="mb-3"><input type="text" class="form-control" id="contactName" placeholder="Your Name" required /></div>
+            <div class="mb-3"><input type="tel" class="form-control" id="contactPhone" placeholder="Phone Number" required /></div>
+            <div class="mb-3"><textarea class="form-control" id="contactMsg" rows="4" placeholder="Your Message" required></textarea></div>
+            <button type="submit" class="btn btn-warning w-100 fw-bold"><i class="fab fa-whatsapp me-2"></i>Send via WhatsApp</button>
           </form>
         </div>
       </div>
-
       <div class="col-lg-4">
         <div class="map-wrapper h-100 rounded-3 overflow-hidden shadow">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125522.41551574055!2d77.95090755!3d9.9251736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c582b1189633%3A0xdc955b9b5f965aa1!2sMadurai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-            width="100%" height="100%" style="min-height:320px;border:0;" allowfullscreen loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125522.41551574055!2d77.95090755!3d9.9251736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c582b1189633%3A0xdc955b9b5f965aa1!2sMadurai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%" height="100%" style="min-height:340px;border:0;" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= FOOTER ======= -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer pt-5 pb-3">
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-4">
         <div class="footer-brand mb-3">
-          <img src="images/meenaxigo-logo.png" alt="MeenaxiGo" class="footer-logo" />
+          <img src="images/hero-bg.png" alt="MeenaxiGo" class="footer-logo" />
         </div>
-        <p class="text-muted small">Your trusted taxi partner in Madurai since 2010. Safe, comfortable, and affordable rides across Tamil Nadu and Kerala.</p>
+        <p class="text-muted small">Your trusted taxi partner in Madurai since 2010. Safe, comfortable and affordable rides across Tamil Nadu and Kerala.</p>
         <div class="social-links mt-3">
           <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
@@ -792,19 +771,14 @@
     </div>
     <hr class="footer-divider mt-4" />
     <div class="row align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <p class="text-muted small mb-0">© 2024 MeenaxiGo. All rights reserved.</p>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-        <p class="text-muted small mb-0">Designed with <i class="fas fa-heart text-danger"></i> for travellers</p>
-      </div>
+      <div class="col-md-6 text-center text-md-start"><p class="text-muted small mb-0">© 2024 MeenaxiGo. All rights reserved.</p></div>
+      <div class="col-md-6 text-center text-md-end"><p class="text-muted small mb-0">Designed with <i class="fas fa-heart text-danger"></i> for travellers</p></div>
     </div>
   </div>
 </footer>
 
-<!-- WhatsApp Float Button -->
-<a href="https://wa.me/919876543210?text=Hi,%20I%20need%20a%20taxi%20from%20Madurai"
-   class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+<!-- WhatsApp Float -->
+<a href="https://wa.me/919876543210?text=Hi,%20I%20need%20a%20taxi" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -813,9 +787,7 @@
   <i class="fas fa-chevron-up"></i>
 </button>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JS -->
 <script src="js/main.js"></script>
 </body>
 </html>
