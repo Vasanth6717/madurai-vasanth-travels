@@ -60,6 +60,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
    ============================================================ */
 .top-bar {
   background: #111; color: #bbb; font-size: .83rem;
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
 .top-contact-item {
   display: flex; align-items: center; gap: 10px;
@@ -99,112 +100,93 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 .top-wa:hover  { border-color: #25d366; color: #25d366; }
 
 /* ============================================================
-   NAVBAR — two-tone: white/pattern logo zone + yellow nav zone
+   NAVBAR — unique dark professional design
    ============================================================ */
 #mainNav {
+  background: var(--dark2);
+  border-bottom: 3px solid var(--yellow);
   padding: 0 !important;
-  box-shadow: 0 3px 18px rgba(0,0,0,.2);
-  position: sticky; top: 0; z-index: 1030;
-  transition: box-shadow .3s;
+  transition: background .35s, box-shadow .35s;
 }
-#mainNav.scrolled { box-shadow: 0 4px 26px rgba(0,0,0,.35); }
+#mainNav.scrolled {
+  background: rgba(22,33,62,.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 28px rgba(0,0,0,.4);
+}
 
-/* WHITE zone with diagonal stripe pattern (matches reference) */
-.nav-logo-zone {
-  background-color: #fff;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(0,0,0,.035) 0,
-    rgba(0,0,0,.035) 1px,
-    transparent 0,
-    transparent 50%
-  );
-  background-size: 10px 10px;
-  padding: 4px 52px 4px 24px;
-  position: relative;
-  z-index: 2;
+/* Yellow vertical accent bar beside logo */
+.nav-accent-bar {
+  width: 4px; height: 38px; border-radius: 4px;
+  background: linear-gradient(180deg, var(--yellow) 0%, var(--yellow-dk) 100%);
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 200px;
-}
-/* Diagonal divider: white skewed slab overlapping the yellow zone */
-.nav-logo-zone::after {
-  content: '';
-  position: absolute;
-  right: -22px; top: 0; bottom: 0;
-  width: 46px;
-  background-color: #fff;
-  background-image: repeating-linear-gradient(
-    -45deg,
-    rgba(0,0,0,.035) 0,
-    rgba(0,0,0,.035) 1px,
-    transparent 0,
-    transparent 50%
-  );
-  background-size: 10px 10px;
-  transform: skewX(-10deg);
-  z-index: 1;
 }
 
 .navbar-logo {
-  height: 58px; width: auto; object-fit: contain;
+  height: 52px; width: auto; object-fit: contain;
   transition: transform .3s, filter .3s;
-  filter: drop-shadow(0 1px 6px rgba(0,0,0,.2));
-  position: relative; z-index: 3;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,.3));
 }
 .navbar-logo:hover {
-  transform: scale(1.06);
-  filter: drop-shadow(0 3px 14px rgba(255,180,0,.6));
+  transform: scale(1.05);
+  filter: drop-shadow(0 2px 12px rgba(255,180,0,.65));
 }
 
-/* YELLOW zone: nav links */
-.nav-menu-zone {
-  background: var(--yellow);
-  padding: 0 24px 0 48px;
-}
-/* Force horizontal row */
-.nav-menu-zone .navbar-nav {
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0;
-}
-.nav-menu-zone .nav-link {
-  color: #222 !important;
-  font-weight: 600; font-size: .9rem;
+/* Desktop nav links */
+#mainNav .nav-link {
+  color: rgba(255,255,255,.78) !important;
+  font-weight: 500; font-size: .875rem;
   padding: 8px 14px !important;
-  white-space: nowrap;
-  transition: color .2s;
+  border-radius: 6px;
+  transition: color .2s, background .2s;
   position: relative;
 }
-.nav-menu-zone .nav-link::after {
+#mainNav .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 4px; left: 14px; right: 14px;
+  bottom: 2px; left: 50%; right: 50%;
   height: 2px; border-radius: 2px;
-  background: #222;
-  transform: scaleX(0); transform-origin: left;
-  transition: transform .22s ease;
+  background: var(--yellow);
+  transition: left .25s ease, right .25s ease;
 }
-.nav-menu-zone .nav-link:hover::after,
-.nav-menu-zone .nav-link.active::after { transform: scaleX(1); }
-.nav-menu-zone .nav-link.active { color: #000 !important; font-weight: 700; }
-
-/* Call Now button */
-.nav-menu-zone .btn-dark {
-  background: var(--dark); border-color: var(--dark);
-  font-size: .86rem; letter-spacing: .3px;
-  transition: background .2s, transform .15s, box-shadow .2s;
-}
-.nav-menu-zone .btn-dark:hover {
-  background: #000; transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.4);
+#mainNav .nav-link:hover::after,
+#mainNav .nav-link.active::after { left: 14px; right: 14px; }
+#mainNav .nav-link:hover,
+#mainNav .nav-link.active {
+  color: #fff !important;
+  background: rgba(255,255,255,.07);
 }
 
-/* Mobile hamburger zone */
-.nav-mobile-zone { background: var(--dark); }
+/* Phone link in navbar */
+.nav-phone-link {
+  display: flex; align-items: center; gap: 7px;
+  color: rgba(255,255,255,.7); text-decoration: none;
+  font-size: .82rem; font-weight: 500;
+  transition: color .2s;
+}
+.nav-phone-link i { color: var(--yellow); }
+.nav-phone-link:hover { color: #fff; }
+
+/* Book Now button */
+.nav-book-btn {
+  font-size: .86rem;
+  transition: transform .2s, box-shadow .2s !important;
+}
+.nav-book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,180,0,.5) !important;
+}
+
+/* Mobile toggler custom */
+.nav-toggler-btn {
+  background: transparent; border: none;
+  display: flex; flex-direction: column; gap: 5px; padding: 6px;
+}
+.nav-toggler-btn span {
+  display: block; width: 24px; height: 2px;
+  background: #fff; border-radius: 2px;
+  transition: all .3s;
+}
 
 /* Footer logo (unchanged) */
 .footer-logo {
@@ -311,7 +293,19 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 /* ============================================================
    BOOKING
    ============================================================ */
-.booking-section { background: var(--light); }
+.booking-section {
+  background: var(--dark2);
+  position: relative;
+  overflow: hidden;
+}
+.booking-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffb400' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.booking-section .container { position: relative; z-index: 1; }
+.booking-section .section-title { color: #fff; }
+.booking-section .text-muted { color: rgba(255,255,255,.6) !important; }
 .booking-card {
   background: #fff; border-radius: var(--radius);
   padding: 40px; max-width: 880px; margin: 0 auto;
@@ -626,6 +620,55 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 
 .btn-outline-light { transition: background .25s, color .25s, transform .2s; }
 .btn-outline-light:hover { transform: translateY(-2px); }
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.how-section { background: #0f1929; }
+.how-step {
+  padding: 28px 20px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  transition: border-color .3s, transform .3s;
+  position: relative;
+  overflow: hidden;
+}
+.how-step::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,180,0,.06) 0%, transparent 60%);
+  opacity: 0; transition: opacity .3s;
+}
+.how-step:hover { border-color: var(--yellow); transform: translateY(-6px); }
+.how-step:hover::before { opacity: 1; }
+.how-num {
+  font-size: 3rem; font-weight: 900;
+  color: rgba(255,180,0,.12); line-height: 1;
+  position: absolute; top: 10px; right: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+.how-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(255,180,0,.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: var(--yellow);
+  margin: 0 auto 14px;
+  transition: background .3s;
+}
+.how-step:hover .how-icon { background: var(--yellow); color: var(--dark); }
+.how-step h6 { color: #fff; font-weight: 700; font-size: .95rem; margin-bottom: 6px; }
+.how-step p { color: rgba(255,255,255,.55); font-size: .82rem; margin: 0; line-height: 1.55; }
+.how-section .section-title { color: #fff; }
+
+/* Improve Why cards with number accent */
+.why-card { position: relative; overflow: hidden; }
+.why-card::after {
+  content: attr(data-num);
+  position: absolute; bottom: -8px; right: 10px;
+  font-size: 4.5rem; font-weight: 900;
+  color: rgba(255,255,255,.04); line-height: 1;
+  pointer-events: none;
+}
 
 /* ============================================================
    RESPONSIVE
