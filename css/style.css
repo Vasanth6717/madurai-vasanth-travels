@@ -108,7 +108,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 /* Dark zone that holds the logo */
 .nav-logo-zone {
   background: var(--dark2);
-  padding: 0 52px 0 24px;
+  padding: 6px 48px 6px 20px;
   position: relative;
   z-index: 2;
   flex-shrink: 0;
@@ -117,15 +117,15 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 .nav-logo-zone::after {
   content: '';
   position: absolute;
-  right: -18px; top: 0; bottom: 0;
-  width: 38px;
+  right: -14px; top: 0; bottom: 0;
+  width: 30px;
   background: var(--dark2);
   transform: skewX(-10deg);
   z-index: 1;
 }
 
 .navbar-logo {
-  height: 110px; width: auto; object-fit: contain;
+  height: 72px; width: auto; object-fit: contain;
   transition: transform .3s, filter .3s;
   filter: drop-shadow(0 2px 12px rgba(0,0,0,.45));
   position: relative; z-index: 3;
@@ -138,13 +138,21 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 /* Yellow zone that holds the nav links */
 .nav-menu-zone {
   background: var(--yellow);
-  padding: 0 28px 0 44px;
+  padding: 0 20px 0 36px;
+}
+/* Force horizontal row — Bootstrap defaults navbar-nav to column */
+.nav-menu-zone .navbar-nav {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2px;
 }
 .nav-menu-zone .nav-link {
   color: var(--dark) !important;
-  font-weight: 600; font-size: .88rem;
-  padding: 8px 13px !important;
+  font-weight: 600; font-size: .87rem;
+  padding: 6px 11px !important;
   border-radius: 6px;
+  white-space: nowrap;
   transition: background .2s, color .2s;
   position: relative;
 }
@@ -152,7 +160,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 .nav-menu-zone .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 3px; left: 13px; right: 13px;
+  bottom: 2px; left: 11px; right: 11px;
   height: 2px;
   background: var(--dark);
   transform: scaleX(0); transform-origin: left;
@@ -167,6 +175,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 /* Call Now button in yellow zone */
 .nav-menu-zone .btn-dark {
   background: var(--dark2); border-color: var(--dark2);
+  font-size: .86rem;
   transition: background .2s, transform .2s, box-shadow .2s;
 }
 .nav-menu-zone .btn-dark:hover {
