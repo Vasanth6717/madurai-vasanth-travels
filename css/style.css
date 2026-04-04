@@ -112,6 +112,9 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
   position: relative;
   z-index: 2;
   flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 /* Diagonal divider using a skewed pseudo-element */
 .nav-logo-zone::after {
@@ -125,7 +128,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 }
 
 .navbar-logo {
-  height: 72px; width: auto; object-fit: contain;
+  height: 95px; width: auto; object-fit: contain;
   transition: transform .3s, filter .3s;
   filter: drop-shadow(0 2px 12px rgba(0,0,0,.45));
   position: relative; z-index: 3;
