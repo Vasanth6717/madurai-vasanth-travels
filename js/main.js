@@ -169,105 +169,94 @@ if (statsBar) {
 /* ============================================================
    Infinite Auto-Scroll Sliders with Arrow Navigation
    ============================================================ */
+/* ============================================================
+   Infinite Sliders — CSS animation for the loop (100% reliable),
+   JS only for pause-on-hover and arrow jumps.
+   ============================================================ */
 window.addEventListener('load', () => {
   initSlider({
     trackId:    'tariffTrack',
     viewportId: 'tariffViewport',
     prevId:     'tariffPrev',
     nextId:     'tariffNext',
-    speed:      0.6
+    duration:   30           // seconds for one full loop
   });
   initSlider({
     trackId:    'pkgTrack',
     viewportId: 'pkgViewport',
     prevId:     'pkgPrev',
     nextId:     'pkgNext',
-    speed:      0.5
+    duration:   38
   });
 });
 
-function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
+function initSlider({ trackId, viewportId, prevId, nextId, duration }) {
   const track    = document.getElementById(trackId);
   const viewport = document.getElementById(viewportId);
   const prevBtn  = document.getElementById(prevId);
   const nextBtn  = document.getElementById(nextId);
   if (!track || !viewport) return;
 
+  /* ---- 1. Measure original items using computed style (never 0) ---- */
   const origItems = Array.from(track.children);
+  const GAP = 24; // must match CSS gap on .slider-track
+  const itemW = parseFloat(getComputedStyle(origItems[0]).width) || 280;
+  // origW = exact pixel distance for one full loop (N items + N trailing gaps)
+  const origW = origItems.length * (itemW + GAP);
 
-  // Compute origW by summing each item's rendered offsetWidth + the CSS gap (24px).
-  // Include a trailing gap so the loop resets seamlessly between the last original
-  // item and the first clone (which also has a 24px gap before it).
-  const GAP  = 24;
-  const origW = origItems.reduce((sum, el) => sum + el.offsetWidth + GAP, 0);
+  /* ---- 2. Clone items ONCE — CSS animation handles the loop ---- */
+  origItems.forEach(item => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
 
-  // Clone 4× so total = 5× originals — arrows can never overshoot.
-  for (let i = 0; i < 4; i++) {
-    origItems.forEach(item => {
-      const clone = item.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.appendChild(clone);
-    });
+  /* ---- 3. Tell CSS animation how far to travel via custom property ---- */
+  track.style.setProperty('--loop-x', `-${origW}px`);
+  track.style.animationDuration       = `${duration}s`;
+  track.style.animationTimingFunction = 'linear';
+  track.style.animationIterationCount = 'infinite';
+  track.style.animationName           = 'slider-marquee';
+
+  /* ---- 4. Pause on hover / touch ---- */
+  const pause = () => track.style.animationPlayState = 'paused';
+  const play  = () => track.style.animationPlayState = 'running';
+  viewport.addEventListener('mouseenter', pause);
+  viewport.addEventListener('mouseleave', play);
+  viewport.addEventListener('touchstart',  pause, { passive: true });
+  viewport.addEventListener('touchend',    play,  { passive: true });
+
+  /* ---- 5. Arrow jump: read current CSS transform, animate to new pos ---- */
+  function getCurrentX() {
+    const m = window.getComputedStyle(track).transform;
+    if (!m || m === 'none') return 0;
+    const parts = m.match(/matrix.*\((.+)\)/);
+    return parts ? -parseFloat(parts[1].split(', ')[4]) : 0;
   }
 
-  let pos     = 0;
-  let paused  = false;
-  let jumping = false;
-
-  function cardStep() {
-    const firstItem = track.querySelector('.slider-item');
-    return firstItem ? firstItem.offsetWidth + 24 : 290;
-  }
-
-  // RAF loop — auto scrolls when not paused or jumping
-  function tick() {
-    if (!paused && !jumping) {
-      pos += speed;
-      if (pos >= origW) pos -= origW;  // reset using stored constant
-      track.style.transform = `translateX(-${pos}px)`;
-    }
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-
-  // Pause on hover / touch
-  viewport.addEventListener('mouseenter', () => { paused = true; });
-  viewport.addEventListener('mouseleave', () => { paused = false; });
-  viewport.addEventListener('touchstart',  () => { paused = true; },  { passive: true });
-  viewport.addEventListener('touchend',    () => { paused = false; }, { passive: true });
-
-  // Smooth arrow jump with ease-in-out
   function jumpBy(delta) {
-    const target = pos + delta;
-    const start  = pos;
-    const dur    = 400;
-    const t0     = performance.now();
-    jumping = true;
+    pause();
+    const step = itemW + GAP;
+    let target = getCurrentX() + delta;
+    // keep inside origW range
+    target = ((target % origW) + origW) % origW;
 
-    function animate(now) {
-      const elapsed  = now - t0;
-      const progress = Math.min(elapsed / dur, 1);
-      const ease = progress < 0.5
-        ? 2 * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+    // smooth transition instead of animation
+    track.style.animationName = 'none';
+    track.style.transition    = 'transform .38s ease-in-out';
+    track.style.transform     = `translateX(-${target}px)`;
 
-      pos = start + (target - start) * ease;
-
-      // keep pos inside the single-set range
-      let p = pos % origW;
-      if (p < 0) p += origW;
-      track.style.transform = `translateX(-${p}px)`;
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        pos = p;
-        jumping = false;
-      }
-    }
-    requestAnimationFrame(animate);
+    setTimeout(() => {
+      // re-sync animation-delay so it resumes from the new position
+      const frac = target / origW;
+      track.style.transition      = '';
+      track.style.transform       = '';
+      track.style.animationDelay  = `${-(frac * duration)}s`;
+      track.style.animationName   = 'slider-marquee';
+      play();
+    }, 420);
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => jumpBy(-cardStep()));
-  if (nextBtn) nextBtn.addEventListener('click', () => jumpBy(cardStep()));
+  if (prevBtn) prevBtn.addEventListener('click', () => jumpBy(-(itemW + GAP)));
+  if (nextBtn) nextBtn.addEventListener('click', () => jumpBy(itemW + GAP));
 }
