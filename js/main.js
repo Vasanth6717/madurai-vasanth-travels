@@ -198,9 +198,11 @@ function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
 
   const origItems = Array.from(track.children);
 
-  // Measure the exact original width BEFORE any cloning.
-  // This constant is used as the seamless loop reset point.
-  const origW = track.scrollWidth;
+  // Compute origW by summing each item's rendered offsetWidth + the CSS gap (24px).
+  // Include a trailing gap so the loop resets seamlessly between the last original
+  // item and the first clone (which also has a 24px gap before it).
+  const GAP  = 24;
+  const origW = origItems.reduce((sum, el) => sum + el.offsetWidth + GAP, 0);
 
   // Clone 4× so total = 5× originals — arrows can never overshoot.
   for (let i = 0; i < 4; i++) {
