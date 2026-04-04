@@ -196,27 +196,26 @@ function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
   const nextBtn  = document.getElementById(nextId);
   if (!track || !viewport) return;
 
-  // Clone original items TWICE for a robust seamless infinite loop.
-  // Total content = 3× originals; loop resets when pos >= origWidth (1/3 of total).
   const origItems = Array.from(track.children);
-  [1, 2].forEach(() => {
+
+  // Measure the exact original width BEFORE any cloning.
+  // This constant is used as the seamless loop reset point.
+  const origW = track.scrollWidth;
+
+  // Clone 4× so total = 5× originals — arrows can never overshoot.
+  for (let i = 0; i < 4; i++) {
     origItems.forEach(item => {
       const clone = item.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       track.appendChild(clone);
     });
-  });
-
-  let pos    = 0;       // current translateX offset (px)
-  let paused = false;   // hover/touch pause flag
-  let jumping = false;  // true while arrow animation runs
-
-  function origWidth() {
-    return track.scrollWidth / 3;
   }
 
+  let pos     = 0;
+  let paused  = false;
+  let jumping = false;
+
   function cardStep() {
-    // width of one card item including gap
     const firstItem = track.querySelector('.slider-item');
     return firstItem ? firstItem.offsetWidth + 24 : 290;
   }
@@ -225,41 +224,39 @@ function initSlider({ trackId, viewportId, prevId, nextId, speed }) {
   function tick() {
     if (!paused && !jumping) {
       pos += speed;
-      if (pos >= origWidth()) pos -= origWidth();
+      if (pos >= origW) pos -= origW;  // reset using stored constant
       track.style.transform = `translateX(-${pos}px)`;
     }
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 
-  // Pause on hover
+  // Pause on hover / touch
   viewport.addEventListener('mouseenter', () => { paused = true; });
   viewport.addEventListener('mouseleave', () => { paused = false; });
   viewport.addEventListener('touchstart',  () => { paused = true; },  { passive: true });
   viewport.addEventListener('touchend',    () => { paused = false; }, { passive: true });
 
-  // Smooth arrow jump
+  // Smooth arrow jump with ease-in-out
   function jumpBy(delta) {
     const target = pos + delta;
     const start  = pos;
-    const dur    = 400; // ms
+    const dur    = 400;
     const t0     = performance.now();
     jumping = true;
 
     function animate(now) {
-      const elapsed = now - t0;
+      const elapsed  = now - t0;
       const progress = Math.min(elapsed / dur, 1);
-      // ease-in-out
       const ease = progress < 0.5
         ? 2 * progress * progress
         : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
       pos = start + (target - start) * ease;
 
-      // keep within first half (loop boundary)
-      let p = pos;
-      if (p >= origWidth()) p -= origWidth();
-      if (p < 0) p += origWidth();
+      // keep pos inside the single-set range
+      let p = pos % origW;
+      if (p < 0) p += origW;
       track.style.transform = `translateX(-${p}px)`;
 
       if (progress < 1) {
