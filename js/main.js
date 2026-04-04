@@ -22,14 +22,14 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* ---- Active nav link on scroll ---- */
+/* ---- Active nav link on scroll (desktop) ---- */
 const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.navbar-nav .nav-link');
+const navLinks  = document.querySelectorAll('#mainNavLinks .nav-link');
 
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 80) {
+    if (window.scrollY >= sec.offsetTop - 90) {
       current = sec.getAttribute('id');
     }
   });
@@ -41,13 +41,10 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* ---- Close mobile nav on link click ---- */
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const navCollapse = document.getElementById('navbarNav');
-    if (navCollapse.classList.contains('show')) {
-      new bootstrap.Collapse(navCollapse).hide();
-    }
+/* ---- Bootstrap Tooltips (top-bar social icons + Call Now) ---- */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+    new bootstrap.Tooltip(el, { trigger: 'hover' });
   });
 });
 
