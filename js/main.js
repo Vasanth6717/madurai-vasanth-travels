@@ -204,19 +204,20 @@ function initSlider({ trackId, viewportId, prevId, nextId, duration }) {
   // origW = exact pixel distance for one full loop (N items + N trailing gaps)
   const origW = origItems.length * (itemW + GAP);
 
-  /* ---- 2. Clone items ONCE — CSS animation handles the loop ---- */
+  /* ---- 2. Clone items ONCE — animation handles the loop ---- */
   origItems.forEach(item => {
     const clone = item.cloneNode(true);
     clone.setAttribute('aria-hidden', 'true');
     track.appendChild(clone);
   });
 
-  /* ---- 3. Tell CSS animation how far to travel via custom property ---- */
-  track.style.setProperty('--loop-x', `-${origW}px`);
-  track.style.animationDuration       = `${duration}s`;
-  track.style.animationTimingFunction = 'linear';
-  track.style.animationIterationCount = 'infinite';
-  track.style.animationName           = 'slider-marquee';
+  /* ---- 3. Inject a unique @keyframes with HARDCODED pixel value ---- */
+  const animName = `marquee-${trackId}`;
+  const styleEl  = document.createElement('style');
+  styleEl.textContent = `@keyframes ${animName} { from { transform: translateX(0); } to { transform: translateX(-${origW}px); } }`;
+  document.head.appendChild(styleEl);
+
+  track.style.animation = `${animName} ${duration}s linear infinite`;
 
   /* ---- 4. Pause on hover / touch ---- */
   const pause = () => track.style.animationPlayState = 'paused';
@@ -236,23 +237,22 @@ function initSlider({ trackId, viewportId, prevId, nextId, duration }) {
 
   function jumpBy(delta) {
     pause();
-    const step = itemW + GAP;
     let target = getCurrentX() + delta;
     // keep inside origW range
     target = ((target % origW) + origW) % origW;
 
     // smooth transition instead of animation
-    track.style.animationName = 'none';
-    track.style.transition    = 'transform .38s ease-in-out';
-    track.style.transform     = `translateX(-${target}px)`;
+    track.style.animation  = 'none';
+    track.style.transition = 'transform .38s ease-in-out';
+    track.style.transform  = `translateX(-${target}px)`;
 
     setTimeout(() => {
       // re-sync animation-delay so it resumes from the new position
       const frac = target / origW;
-      track.style.transition      = '';
-      track.style.transform       = '';
-      track.style.animationDelay  = `${-(frac * duration)}s`;
-      track.style.animationName   = 'slider-marquee';
+      track.style.transition = '';
+      track.style.transform  = '';
+      track.style.animation  = `${animName} ${duration}s linear infinite`;
+      track.style.animationDelay = `${-(frac * duration)}s`;
       play();
     }, 420);
   }
