@@ -14,7 +14,7 @@
   --radius:    14px;
 }
 *  { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 75px; }
 body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidden; }
 
 /* ---- Utilities ---- */
@@ -120,14 +120,14 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
     transparent 50%
   );
   background-size: 10px 10px;
-  padding: 8px 52px 8px 28px;
+  padding: 4px 52px 4px 24px;
   position: relative;
   z-index: 2;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 240px;
+  min-width: 200px;
 }
 /* Diagonal divider: white skewed slab overlapping the yellow zone */
 .nav-logo-zone::after {
@@ -149,7 +149,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 }
 
 .navbar-logo {
-  height: 90px; width: auto; object-fit: contain;
+  height: 58px; width: auto; object-fit: contain;
   transition: transform .3s, filter .3s;
   filter: drop-shadow(0 1px 6px rgba(0,0,0,.2));
   position: relative; z-index: 3;
