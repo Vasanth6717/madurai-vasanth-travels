@@ -59,8 +59,7 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
    TOP BAR
    ============================================================ */
 .top-bar {
-  background: #0d1117; color: #bbb; font-size: .82rem;
-  border-bottom: 1px solid rgba(255,180,0,.15);
+  background: #111; color: #bbb; font-size: .83rem;
 }
 .top-contact-item {
   display: flex; align-items: center; gap: 10px;
@@ -69,125 +68,143 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
 }
 .top-contact-item:hover { color: var(--yellow); }
 .top-contact-icon {
-  width: 34px; height: 34px; border-radius: 50%;
+  width: 36px; height: 36px; border-radius: 50%;
   background: var(--yellow); color: #000;
   display: flex; align-items: center; justify-content: center;
-  font-size: .8rem; flex-shrink: 0;
+  font-size: .82rem; flex-shrink: 0;
   transition: transform .2s, box-shadow .2s;
 }
 .top-contact-item:hover .top-contact-icon {
-  transform: scale(1.12);
+  transform: scale(1.1);
   box-shadow: 0 0 10px rgba(255,180,0,.6);
 }
 
+/* Social icons: outlined circles only (like reference site) */
 .top-social {
-  width: 30px; height: 30px; border-radius: 50%;
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.4);
+  background: transparent;
   display: inline-flex; align-items: center; justify-content: center;
-  font-size: .78rem; color: #fff; text-decoration: none;
-  transition: transform .25s, box-shadow .25s;
+  font-size: .78rem; color: #bbb; text-decoration: none;
+  transition: border-color .2s, color .2s, background .2s, transform .2s;
 }
-.top-social:hover { transform: scale(1.18); color: #fff; }
-.top-fb { background: #1877f2; }
-.top-fb:hover { box-shadow: 0 0 10px rgba(24,119,242,.7); }
-.top-ig { background: linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
-.top-ig:hover { box-shadow: 0 0 10px rgba(220,39,67,.6); }
-.top-wa { background: #25d366; }
-.top-wa:hover { box-shadow: 0 0 10px rgba(37,211,102,.7); }
+.top-social:hover {
+  border-color: #fff; color: #fff;
+  background: rgba(255,255,255,.1);
+  transform: scale(1.12);
+}
+/* Keep brand identity on hover only */
+.top-fb:hover  { border-color: #1877f2; color: #1877f2; }
+.top-ig:hover  { border-color: #e1306c; color: #e1306c; }
+.top-wa:hover  { border-color: #25d366; color: #25d366; }
 
 /* ============================================================
-   NAVBAR — two-tone design (dark logo zone + yellow menu zone)
+   NAVBAR — two-tone: white/pattern logo zone + yellow nav zone
    ============================================================ */
 #mainNav {
   padding: 0 !important;
-  box-shadow: 0 4px 24px rgba(0,0,0,.3);
+  box-shadow: 0 3px 18px rgba(0,0,0,.2);
   position: sticky; top: 0; z-index: 1030;
   transition: box-shadow .3s;
 }
-#mainNav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.5); }
+#mainNav.scrolled { box-shadow: 0 4px 26px rgba(0,0,0,.35); }
 
-/* Dark zone that holds the logo */
+/* WHITE zone with diagonal stripe pattern (matches reference) */
 .nav-logo-zone {
-  background: var(--dark2);
-  padding: 6px 48px 6px 20px;
+  background-color: #fff;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0,0,0,.035) 0,
+    rgba(0,0,0,.035) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 10px 10px;
+  padding: 8px 52px 8px 28px;
   position: relative;
   z-index: 2;
   flex-shrink: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
+  min-width: 240px;
 }
-/* Diagonal divider using a skewed pseudo-element */
+/* Diagonal divider: white skewed slab overlapping the yellow zone */
 .nav-logo-zone::after {
   content: '';
   position: absolute;
-  right: -14px; top: 0; bottom: 0;
-  width: 30px;
-  background: var(--dark2);
+  right: -22px; top: 0; bottom: 0;
+  width: 46px;
+  background-color: #fff;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0,0,0,.035) 0,
+    rgba(0,0,0,.035) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 10px 10px;
   transform: skewX(-10deg);
   z-index: 1;
 }
 
 .navbar-logo {
-  height: 95px; width: auto; object-fit: contain;
+  height: 90px; width: auto; object-fit: contain;
   transition: transform .3s, filter .3s;
-  filter: drop-shadow(0 2px 12px rgba(0,0,0,.45));
+  filter: drop-shadow(0 1px 6px rgba(0,0,0,.2));
   position: relative; z-index: 3;
 }
 .navbar-logo:hover {
   transform: scale(1.06);
-  filter: drop-shadow(0 4px 16px rgba(255,180,0,.7));
+  filter: drop-shadow(0 3px 14px rgba(255,180,0,.6));
 }
 
-/* Yellow zone that holds the nav links */
+/* YELLOW zone: nav links */
 .nav-menu-zone {
   background: var(--yellow);
-  padding: 0 20px 0 36px;
+  padding: 0 24px 0 48px;
 }
-/* Force horizontal row — Bootstrap defaults navbar-nav to column */
+/* Force horizontal row */
 .nav-menu-zone .navbar-nav {
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 2px;
+  gap: 0;
 }
 .nav-menu-zone .nav-link {
-  color: var(--dark) !important;
-  font-weight: 600; font-size: .87rem;
-  padding: 6px 11px !important;
-  border-radius: 6px;
+  color: #222 !important;
+  font-weight: 600; font-size: .9rem;
+  padding: 8px 14px !important;
   white-space: nowrap;
-  transition: background .2s, color .2s;
+  transition: color .2s;
   position: relative;
 }
-/* Underline slide-in on hover/active */
 .nav-menu-zone .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 2px; left: 11px; right: 11px;
-  height: 2px;
-  background: var(--dark);
+  bottom: 4px; left: 14px; right: 14px;
+  height: 2px; border-radius: 2px;
+  background: #222;
   transform: scaleX(0); transform-origin: left;
-  transition: transform .25s ease;
-  border-radius: 2px;
+  transition: transform .22s ease;
 }
 .nav-menu-zone .nav-link:hover::after,
 .nav-menu-zone .nav-link.active::after { transform: scaleX(1); }
-.nav-menu-zone .nav-link:hover,
-.nav-menu-zone .nav-link.active { background: rgba(0,0,0,.08); }
+.nav-menu-zone .nav-link.active { color: #000 !important; font-weight: 700; }
 
-/* Call Now button in yellow zone */
+/* Call Now button */
 .nav-menu-zone .btn-dark {
-  background: var(--dark2); border-color: var(--dark2);
-  font-size: .86rem;
-  transition: background .2s, transform .2s, box-shadow .2s;
+  background: var(--dark); border-color: var(--dark);
+  font-size: .86rem; letter-spacing: .3px;
+  transition: background .2s, transform .15s, box-shadow .2s;
 }
 .nav-menu-zone .btn-dark:hover {
   background: #000; transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+  box-shadow: 0 6px 16px rgba(0,0,0,.4);
 }
 
-/* Mobile zone (hamburger side) */
-.nav-mobile-zone { background: var(--dark2); }
+/* Mobile hamburger zone */
+.nav-mobile-zone { background: var(--dark); }
 
 /* Footer logo (unchanged) */
 .footer-logo {
