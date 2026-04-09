@@ -874,40 +874,56 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
    TOUR PACKAGES SLIDER
    ============================================================ */
 .packages-section { background: var(--light); }
-.pkg-slider-item .pkg-card { width: 282px; }
-.pkg-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.07); transition: transform .3s, box-shadow .3s; }
-.pkg-card:hover { transform: translateY(-7px); box-shadow: 0 18px 38px rgba(0,0,0,.13); }
+.pkg-slider-item .pkg-card { width: 360px; }
+.pkg-card {
+  background: #fff; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,.09);
+  transition: transform .35s cubic-bezier(.25,.8,.25,1), box-shadow .35s;
+}
+.pkg-card:hover { transform: translateY(-10px); box-shadow: 0 24px 54px rgba(0,0,0,.17); }
 .pkg-img {
-  height: 196px; background-size: cover; background-position: center;
+  height: 250px; background-size: cover; background-position: center;
   position: relative; display: flex; flex-direction: column; justify-content: flex-end;
-  transition: background-size .5s;
   overflow: hidden;
 }
 /* zoom effect via pseudo scale trick */
 .pkg-img::before {
   content: ''; position: absolute; inset: 0;
   background: inherit; background-size: cover; background-position: center;
-  transition: transform .5s ease;
+  transition: transform .55s cubic-bezier(.25,.8,.25,1);
 }
-.pkg-card:hover .pkg-img::before { transform: scale(1.08); }
+.pkg-card:hover .pkg-img::before { transform: scale(1.10); }
 .pkg-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.15) 55%, transparent 100%);
+  transition: background .35s;
+}
+.pkg-card:hover .pkg-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.25) 60%, transparent 100%);
 }
 .pkg-region-tag {
-  position: absolute; top: 12px; left: 12px; z-index: 2;
+  position: absolute; top: 14px; left: 14px; z-index: 2;
   background: var(--yellow); color: #000;
-  font-size: .68rem; font-weight: 700; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 20px; letter-spacing: .5px;
+  font-size: .72rem; font-weight: 700; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 20px; letter-spacing: .5px;
+  transition: background .3s, transform .3s;
 }
+.pkg-card:hover .pkg-region-tag { background: #fff; transform: translateY(-2px); }
 .pkg-name {
   position: relative; z-index: 2; color: #fff;
-  font-size: 1.1rem; font-weight: 700; padding: 12px 14px;
-  text-shadow: 0 2px 6px rgba(0,0,0,.5);
+  font-size: 1.3rem; font-weight: 800; padding: 14px 18px 6px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.55);
+  transition: letter-spacing .35s;
 }
-.pkg-body { padding: 14px 16px; }
-.pkg-body p { font-size: .81rem; color: var(--muted); margin-bottom: 10px; }
-.pkg-dist { font-size: .78rem; color: var(--muted); }
+.pkg-card:hover .pkg-name { letter-spacing: .3px; }
+.pkg-tagline {
+  position: relative; z-index: 2; color: rgba(255,255,255,.8);
+  font-size: .78rem; padding: 0 18px 14px;
+}
+.pkg-body { padding: 18px 20px 20px; }
+.pkg-body p { font-size: .86rem; color: var(--muted); margin-bottom: 12px; line-height: 1.6; }
+.pkg-dist { font-size: .8rem; color: var(--muted); font-weight: 500; }
+.pkg-body .btn { font-size: .82rem; padding: 7px 18px; border-radius: 20px; }
 
 /* ============================================================
    WHY CHOOSE US
@@ -1446,7 +1462,9 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
   .top-bar .d-flex:first-child a:last-child { display: none; }
   .stat-number { font-size: 1.4rem; }
   .slider-item .tariff-card { width: 240px; }
-  .pkg-slider-item .pkg-card { width: 250px; }
+  .pkg-slider-item .pkg-card { width: 280px; }
+  .pkg-img { height: 190px; }
+  .pkg-name { font-size: 1.1rem; }
   .fare-vehicles-grid { grid-template-columns: repeat(3, 1fr); }
   #stickyBar .sticky-call-btn { display: none; }
 }

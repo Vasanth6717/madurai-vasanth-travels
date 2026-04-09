@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
   if (pre) setTimeout(() => pre.classList.add('hidden'), 900);
 
   initSlider('tariffTrack','tariffViewport','tariffPrev','tariffNext', 272, 6, 55);
-  initSlider('pkgTrack',   'pkgViewport',  'pkgPrev',   'pkgNext',    282, 9, 45);
+  initSlider('pkgTrack',   'pkgViewport',  'pkgPrev',   'pkgNext',    360, 9, 40);
   initParticles();
   initCardTilt();
 });
