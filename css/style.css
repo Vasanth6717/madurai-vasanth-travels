@@ -754,9 +754,9 @@ body { font-family: 'Poppins', sans-serif; color: var(--text); overflow-x: hidde
   gap: 12px;
 }
 .about-img-main { grid-column: 1 / 3; border-radius: var(--radius); overflow: hidden; }
-.about-img-main .zoom-img { height: 260px; }
+.about-img-main .zoom-img { height: 260px; object-position: center 40%; }
 .about-img-thumb { grid-column: 2 / 3; border-radius: var(--radius); overflow: hidden; }
-.about-img-thumb .zoom-img { height: 180px; }
+.about-img-thumb .zoom-img { height: 180px; object-position: center 40%; }
 
 .experience-badge {
   position: absolute; bottom: 0; left: 0;
